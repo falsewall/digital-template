@@ -21,7 +21,7 @@ window.onload = function() {
     }
     
     var bouncy;
-
+	var text2;
 	var counter = 0;
     
     function create() {
@@ -41,13 +41,13 @@ window.onload = function() {
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
         var text = game.add.text( game.world.centerX, 15, "Build something Ketchup.", style );
-		
+		text2 = game.add.text(200, 20, '', {fill: '#f2000f});
 		bouncy.events.onInputDown.add(listener, this);
         text.anchor.setTo( 0.5, 0.3 );
     }
     function listener() {
 			counter++;
-
+			text2.text = "You clicked "+ counter + "times.";
 	
 	}
     function update() {
