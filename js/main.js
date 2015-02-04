@@ -17,7 +17,7 @@ window.onload = function() {
     
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.image( 'catpic', 'assets/cats.png' );
+        game.load.image( 'catpic', 'assets/phaser.png' );
     }
     
     var bouncy;
