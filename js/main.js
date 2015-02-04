@@ -16,7 +16,7 @@ window.onload = function() {
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
 
-var text;
+
 var counter = 0;
 
 function preload () {
@@ -43,7 +43,7 @@ function create() {
     //  Enables all kind of input actions on this image (click, etc)
     image.inputEnabled = true;
 
-    text = game.add.text(250, 16, '', { fill: '#ffffff' });
+    var text = game.add.text(250, 16, '', { fill: '#ffffff' });
 
     image.events.onInputDown.add(listener, this);
 
