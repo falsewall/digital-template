@@ -21,10 +21,13 @@ window.onload = function() {
     }
     
     var bouncy;
+	var text2;
+	var counter = 0;
     
     function create() {
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'catpic' );
+		bouncy.inputEnabled = true;//Image can now accept things like clicks, maybe some other things too.
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
         bouncy.anchor.setTo( 0.5, 0.5 );
@@ -38,9 +41,15 @@ window.onload = function() {
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
         var text = game.add.text( game.world.centerX, 15, "Build something Ketchup.", style );
+		text2 = game.add.text(200, 20, '', {fill: '#f2000f3});
+		bouncy.events.onInputDown.add(listener, this);
         text.anchor.setTo( 0.5, 0.3 );
     }
-    
+    function listener() {
+			counter++;
+			text2.text = "You clicked "+ counter + "times.";
+	
+	}
     function update() {
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
