@@ -30,7 +30,7 @@ window.onload = function() {
 		bouncy.inputEnabled = true;//Image can now accept things like clicks, maybe some other things too.
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
-        bouncy.anchor.setTo( 0.5, 0.5 );
+ 
         
         // Turn on the arcade physics engine for this sprite.
 
