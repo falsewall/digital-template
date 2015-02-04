@@ -16,45 +16,23 @@ window.onload = function() {
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
 
-var text;
-var counter = 0;
-
-function preload () {
-
-    //  You can fill the preloader with as many assets as your game requires
-
-    //  Here we are loading an image. The first parameter is the unique
-    //  string by which we'll identify the image later in our code.
-
-    //  The second parameter is the URL of the image (relative)
-    game.load.image('einstein', 'assets/phaser.png');
-
+function preload() {
+    game.load.atlasJSONHash('bot', 'assets/running_bot.png', 'assets/running_bot.json');
 }
 
 function create() {
 
-    //  This creates a simple sprite that is using our loaded image and
-    //  displays it on-screen and assign it to a variable
-    var image = game.add.sprite(game.world.centerX, game.world.centerY, 'einstein');
+    //  This sprite is using a texture atlas for all of its animation data
+    var bot = game.add.sprite(200, 200, 'bot');
 
-    //  Moves the image anchor to the middle, so it centers inside the game properly
-    image.anchor.set(0.5);
+    //  Here we add a new animation called 'run'
+    //  We haven't specified any frames because it's using every frame in the texture atlas
+    bot.animations.add('run');
 
-    //  Enables all kind of input actions on this image (click, etc)
-    image.inputEnabled = true;
-	game.physics.enable(image, Phaser.Physics.ARCADE);
-	image.body.velocity.x = 140;
-
-    text = game.add.text(250, 16, '', { fill: '#ffffff' });
-
-    image.events.onInputDown.add(listener, this);
-
-}
-
-function listener () {
-
-    counter++;
-    text.text = "You clicked " + counter + " times!";
+    //  And this starts the animation playing by using its key ("run")
+    //  15 is the frame rate (15fps)
+    //  true means it will loop when it finishes
+    bot.animations.play('run', 15, true);
 
 }
 
