@@ -13,39 +13,47 @@ window.onload = function() {
     
     "use strict";
     
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
-    
-    function preload() {
-        // Load an image and call it 'logo'.
-        game.load.image( 'catpic', 'assets/phaser.png' );
-    }
- 
 
-	var counter = 0;
-    
-    function create() {
-        // Create a sprite at the center of the screen using the 'logo' image.
-        var bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'catpic' );
-		bouncy.anchor.set(.5);
-		bouncy.inputEnabled = true;//Image can now accept things like clicks, maybe some other things too.
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
- 
-        
-        // Turn on the arcade physics engine for this sprite.
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
 
-        // Add some text using a CSS style.
-        // Center it in X, and position its top 15 pixels from the top of the world.
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Build something Ketchup.", style );
+var text;
+var counter = 0;
 
-		bouncy.events.onInputDown.add(listener, this);
-        
-    }
-    function listener() {
-			counter++;
-			text.text = "You clicked "+ counter + "times.";
-	
-	}
+function preload () {
+
+    //  You can fill the preloader with as many assets as your game requires
+
+    //  Here we are loading an image. The first parameter is the unique
+    //  string by which we'll identify the image later in our code.
+
+    //  The second parameter is the URL of the image (relative)
+    game.load.image('einstein', 'assets/phaser.png');
+
+}
+
+function create() {
+
+    //  This creates a simple sprite that is using our loaded image and
+    //  displays it on-screen and assign it to a variable
+    var image = game.add.sprite(game.world.centerX, game.world.centerY, 'einstein');
+
+    //  Moves the image anchor to the middle, so it centers inside the game properly
+    image.anchor.set(0.5);
+
+    //  Enables all kind of input actions on this image (click, etc)
+    image.inputEnabled = true;
+
+    text = game.add.text(250, 16, '', { fill: '#ffffff' });
+
+    image.events.onInputDown.add(listener, this);
+
+}
+
+function listener () {
+
+    counter++;
+    text.text = "You clicked " + counter + " times!";
+
+}
 
 };
