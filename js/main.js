@@ -39,8 +39,7 @@ function create() {
 
     //  Moves the image anchor to the middle, so it centers inside the game properly
     image.anchor.set(0.5);
-	game.physics.enable(image, Phaser.Physics.Arcade);
-	image.body.velocity.x=140
+
     //  Enables all kind of input actions on this image (click, etc)
     image.inputEnabled = true;
 
