@@ -42,6 +42,8 @@ function create() {
 
     //  Enables all kind of input actions on this image (click, etc)
     image.inputEnabled = true;
+	game.physics.enable(image, Phaser.Physics.ARCADE);
+	image.body.velocity.x = 140;
 
     text = game.add.text(250, 16, '', { fill: '#ffffff' });
 
