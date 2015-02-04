@@ -41,9 +41,9 @@ window.onload = function() {
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
         var text = game.add.text( game.world.centerX, 15, "Build something Ketchup.", style );
-
+	text.anchor.setTo( 0.5, 0.3 );
 		bouncy.events.onInputDown.add(listener, this);
-        text.anchor.setTo( 0.5, 0.3 );
+        
     }
     function listener() {
 			counter++;
