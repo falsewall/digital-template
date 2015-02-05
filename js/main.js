@@ -32,14 +32,17 @@ function preload() {
 }
 
 function create() {
-
+	game.physics.startSystem(Phaser.Physics.ARCADE);
+	game.stage.backgroundColor = '#787878';
+	
 	map = game.add.tilemap('map');
 	map.addTilesetImage('tileset');
+	
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	layer.debug = true;
 	p= game.add.sprite(32, 32, 'player');
-	map.setCollisionBetween(0, 59);
+	map.setCollisionBetween(0, 100);
 	
 	game.physics.enable(p);
 
