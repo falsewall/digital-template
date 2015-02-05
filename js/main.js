@@ -37,7 +37,7 @@ function create() {
 	game.stage.backgroundColor = '#787878';
 	
 	map = game.add.tilemap('map');
-	map.addTilesetImage('tileset');
+	map.addTilesetImage('Industrial-TileSheet', 'tileset');
 	
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
