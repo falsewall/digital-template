@@ -85,13 +85,13 @@ game.physics.arcade.collide(p, layer);
 	   
 		if (cursors.left.isDown && p.body.blocked.left && touched > -1 ) {
 			jump2.play();
-			p.body.velocity.x = 450;
-			p.body.velocity.y = -400;
+			p.body.velocity.x = 800;
+			p.body.velocity.y = -500;
 		}
 		if (cursors.right.isDown && p.body.blocked.right && touched < 1) {
 			jump3.play();
-			p.body.velocity.x = -450;
-			p.body.velocity.y = -400;
+			p.body.velocity.x = -800;
+			p.body.velocity.y = -500;
 		}
 	   
 	   	if (touched > -1) //right touched or nothing touched
@@ -142,17 +142,17 @@ function update() {
         if (p.body.onFloor())
         {
 			jump.play();
-            p.body.velocity.y = -200;
+            p.body.velocity.y = -400;
         }
     }
 
     if (cursors.left.isDown)
     {
-        p.body.velocity.x = -150;
+        p.body.velocity.x = -300;
     }
     else if (cursors.right.isDown)
     {
-        p.body.velocity.x = 150;
+        p.body.velocity.x = 300;
     }
 
 }
