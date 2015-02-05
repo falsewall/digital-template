@@ -88,12 +88,12 @@ game.physics.arcade.collide(p, layer);
 				touched=1;//just hit right wall
 			}
 		}
-		if(p.body.blocked.down)
-		{
-			touched=0;//reset touched on landing
-		}
 	
     }
+	if(p.body.blocked.down)
+	{
+		touched=0;//reset touched on landing
+	}
 
 
 }
