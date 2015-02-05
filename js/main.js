@@ -20,48 +20,74 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 var map;
 var layer;
+var p;
+var cursors;
 
 function preload() {
-	
+	game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tileset', 'assets/tilesheets/Industrial-TileSheet.png');
-    game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
+	game.load.image('player', 'assets/sprites/phaser-dude.png');
 
 
 }
 
 function create() {
 
-	map= game.add.tilemap('map');
+	map = game.add.tilemap('map');
 	map.addTilesetImage('tileset');
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	layer.debug = true;
+	p= game.add.sprite(32, 32, 'player');
 	map.setCollisionBetween(0, 3);
 	
-   // game.physics.startSystem(Phaser.Physics.ARCADE);
+	game.physics.enable(p);
 
-    //game.physics.arcade.gravity.y = 200;
+    game.physics.arcade.gravity.y = 250;
+
+    p.body.bounce.y = 0.2;
+    p.body.linearDamping = 1;
+    p.body.collideWorldBounds = true;
+
+    game.camera.follow(p);
+
+    cursors = game.input.keyboard.createCursorKeys();
 
 
-
-    //game.physics.enable([ ball, tilesprite ], Phaser.Physics.ARCADE);
-
-    //ball.body.collideWorldBounds = true;
-    //ball.body.bounce.set(1);
-
-    //tilesprite.body.collideWorldBounds = true;
-    //tilesprite.body.immovable = true;
-    //tilesprite.body.allowGravity = false;
-
-    //cursors = game.input.keyboard.createCursorKeys();
 
 }
 
+function update() {
 
+    game.physics.arcade.collide(p, layer);
+
+    p.body.velocity.x = 0;
+
+    if (cursors.up.isDown)
+    {
+        if (p.body.onFloor())
+        {
+            p.body.velocity.y = -200;
+        }
+    }
+
+    if (cursors.left.isDown)
+    {
+        p.body.velocity.x = -150;
+    }
+    else if (cursors.right.isDown)
+    {
+        p.body.velocity.x = 150;
+    }
+
+}
 
 function render() {
 
-    // game.debug.body(tilesprite);
+    // game.debug.body(p);
+    game.debug.bodyInfo(p, 32, 320);
 
 }
+
+
 };
