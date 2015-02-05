@@ -30,7 +30,10 @@ function preload() {
 var bot;
 
 function create() {
+	 var text = "- phaser -\n with a sprinkle of \n pixi dust.";
+    var style = { font: "65px Arial", fill: "#ff0044", align: "center" };
 
+    var t = game.add.text(game.world.centerX-300, 0, text, style);
     bot = game.add.sprite(game.world.centerX, 300, 'bot');
 
     bot.animations.add('run');
