@@ -36,6 +36,7 @@ function preload() {
 	game.load.audio('dog1', 'assets/sounds/effects/jump_01.ogg');
 	game.load.audio('dog2', 'assets/sounds/effects/jump_02.ogg');
 	game.load.audio('dog3', 'assets/sounds/effects/jump_03.ogg');
+	game.load.spritesheet('dog', 'assets/sprites/dog.jpg', 80, 60);
 
 
 
@@ -60,11 +61,11 @@ function create() {
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	layer.debug = true;
-	p= game.add.sprite(100, 100, 'player');
+	p= game.add.sprite(100, 100, 'dog');
 	
 	game.physics.enable(p);
 
-    game.physics.arcade.gravity.y = 100;
+    game.physics.arcade.gravity.y = 500;
 
     p.body.bounce.y = 0.1;
     p.body.linearDamping = 1;
