@@ -62,6 +62,7 @@ function create() {
 
 }
 function doublecheck(){//run every time player hits a wall. sets touched and leaves it till another wall is hit or ground is landed
+game.physics.arcade.collide(p, layer);
    if (cursors.up.isDown && !p.body.blocked.down ) {
 	   
 	   	if (touched >== 0) //right touched or nothing touched
