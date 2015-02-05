@@ -31,10 +31,11 @@ function preload() {
 function create() {
 
 	map= game.add.tilemap('map');
-	map.addTilesetImage(tileset);
+	map.addTilesetImage('tileset');
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
-	map.setCollisionBetween(0, 100);
+	layer.debug = true;
+	map.setCollisionBetween(0, 3);
 	
    // game.physics.startSystem(Phaser.Physics.ARCADE);
 
