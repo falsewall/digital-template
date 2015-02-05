@@ -62,6 +62,7 @@ function create() {
 	layer.resizeWorld();
 	layer.debug = true;
 	p= game.add.sprite(100, 100, 'dog');
+	p.animations.add('walk');p.animations.play('walk', 20, true);
 	
 	game.physics.enable(p);
 
