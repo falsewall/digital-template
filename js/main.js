@@ -38,7 +38,7 @@ function create() {
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	layer.debug = true;
-	p= game.add.sprite(32, 32, 'player');
+	p = game.add.sprite(32, 32, 'player');
 	map.setCollisionBetween(0, 130);
 	
 	game.physics.enable(p);
