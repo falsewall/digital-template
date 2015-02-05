@@ -61,7 +61,7 @@ function create() {
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	//layer.debug = true;
-	p= game.add.sprite(80, 60, 'dog');
+	p= game.add.sprite(90, 500, 'dog');
 	//p.animations.add('walk');p.animations.play('walk', 20, true);
 	
 	game.physics.enable(p);
@@ -126,11 +126,11 @@ function update() {
 	{
 	    if(p.body.velocity.x < 0)
 		{
-			p.body.velocity.x+=5;
+			p.body.velocity.x+=10;
 		}
 		if(p.body.velocity.x > 0)
 		{
-			p.body.velocity.x-=5;
+			p.body.velocity.x-=10;
 		}
 
 	
@@ -160,7 +160,7 @@ function update() {
 function render() {
 
     //game.debug.body(p);
-    game.debug.bodyInfo(p, 32, 320);
+    //game.debug.bodyInfo(p, 32, 320);
 
 }
 
