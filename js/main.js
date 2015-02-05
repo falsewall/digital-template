@@ -14,133 +14,42 @@ window.onload = function() {
     "use strict";
     
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create});
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create });
 
 function preload() {
 
-    //  Texture Atlas Method 2
-    //
-    //  In this example we assume that the TexturePacker JSON data is a real json object stored as a var
-    //  (in this case botData)
-
-    game.load.atlas('bot', 'assets/sprites/running_bot.png', null, botData);
+    game.load.spritesheet('mummy', 'assets/sprites/metalslug_mummy37x45.png', 37, 45, 18);
+    game.load.spritesheet('monster', 'assets/sprites/metalslug_monster39x40.png', 39, 40);
 
 }
 
-var bot;
+var sprite;
 
 function create() {
-	 var text = "- phaser -\n with a sprinkle of \n pixi dust.";
-    var style = { font: "65px Arial", fill: "#ff0044", align: "center" };
 
-    var t = game.add.text(game.world.centerX-300, 0, text, style);
-    bot = game.add.sprite(game.world.centerX, 300, 'bot');
+    sprite = game.add.sprite(300, 200, 'monster');
 
-    bot.animations.add('run');
-    bot.animations.play('run', 10, true);
+    sprite.animations.add('walk', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+    sprite.animations.play('walk', 20, true);
+    sprite.scale.set(4);
+    sprite.smoothed = false;
+
+    game.input.onDown.add(changeTexture, this);
 
 }
 
-var botData = {
-    "frames": [
+function changeTexture() {
 
-{
-    "filename": "running bot.swf/0000",
-    "frame": { "x": 34, "y": 128, "w": 56, "h": 60 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 2, "w": 56, "h": 60 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0001",
-    "frame": { "x": 54, "y": 0, "w": 56, "h": 58 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 3, "w": 56, "h": 58 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0002",
-    "frame": { "x": 54, "y": 58, "w": 56, "h": 58 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 3, "w": 56, "h": 58 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0003",
-    "frame": { "x": 0, "y": 192, "w": 34, "h": 64 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 11, "y": 0, "w": 34, "h": 64 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0004",
-    "frame": { "x": 0, "y": 64, "w": 54, "h": 64 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 1, "y": 0, "w": 54, "h": 64 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0005",
-    "frame": { "x": 196, "y": 0, "w": 56, "h": 58 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 0, "y": 3, "w": 56, "h": 58 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0006",
-    "frame": { "x": 0, "y": 0, "w": 54, "h": 64 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 1, "y": 0, "w": 54, "h": 64 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0007",
-    "frame": { "x": 140, "y": 0, "w": 56, "h": 58 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 0, "y": 3, "w": 56, "h": 58 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0008",
-    "frame": { "x": 34, "y": 188, "w": 50, "h": 60 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 3, "y": 2, "w": 50, "h": 60 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0009",
-    "frame": { "x": 0, "y": 128, "w": 34, "h": 64 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 11, "y": 0, "w": 34, "h": 64 },
-    "sourceSize": { "w": 56, "h": 64 }
-},
-{
-    "filename": "running bot.swf/0010",
-    "frame": { "x": 84, "y": 188, "w": 56, "h": 58 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 0, "y": 3, "w": 56, "h": 58 },
-    "sourceSize": { "w": 56, "h": 64 }
-}],
-    "meta": {
-        "app": "http://www.texturepacker.com",
-        "version": "1.0",
-        "image": "running_bot.png",
-        "format": "RGBA8888",
-        "size": { "w": 252, "h": 256 },
-        "scale": "0.2",
-        "smartupdate": "$TexturePacker:SmartUpdate:fb56f261b1eb04e3215824426595f64c$"
+    if (sprite.key === 'monster')
+    {
+        sprite.loadTexture('mummy', 0, false);
     }
-};
+    else
+    {
+        sprite.loadTexture('monster', 0, false);
+    }
 
+    // sprite.smoothed = false;
+
+}
 };
