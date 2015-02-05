@@ -19,6 +19,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 var tileset;
 var map;
+var layer;
 
 function preload() {
 
@@ -30,9 +31,9 @@ function preload() {
 function create() {
 
 	map= game.add.tilemap('map');
-	map.addTilesetImage('tileset');
+	map.addTilesetImage(tileset);
 	layer = map.createLayer('Tile Layer 1');
-	layer.resizeworld();
+	layer.resizeWorld();
 	map.setCollisionBetween(0, 100);
 	
    // game.physics.startSystem(Phaser.Physics.ARCADE);
