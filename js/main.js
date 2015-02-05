@@ -64,7 +64,7 @@ function create() {
 function update() {
 
     game.physics.arcade.collide(p, layer);
-	if (p.body.touching.down)
+	if (p.body.blocked.down)
 	{
 	    if(p.body.velocity.x < 0)
 		{
