@@ -43,7 +43,7 @@ function create() {
 	layer.resizeWorld();
 	layer.debug = true;
 	p= game.add.sprite(32, 32, 'player');
-	map.setCollisionBetween(0, 59);
+	map.setCollisionBetween(100, 108);
 	
 	game.physics.enable(p);
 
