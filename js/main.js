@@ -38,18 +38,18 @@ function create() {
 	
 	map = game.add.tilemap('map');
 	map.addTilesetImage('Industrial-TileSheet', 'tileset');
+	map.setCollision(98);
 	
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	layer.debug = true;
 	p= game.add.sprite(100, 100, 'player');
-	map.setCollision(98);
 	
 	game.physics.enable(p);
 
     game.physics.arcade.gravity.y = 250;
 
-    p.body.bounce.y = 0.2;
+    p.body.bounce.y = 0.4;
     p.body.linearDamping = 1;
     p.body.collideWorldBounds = true;
 
