@@ -16,65 +16,45 @@ window.onload = function() {
 
 var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
 
-var ball;
-var tilesprite;
-var cursors;
+
+var tileset;
+var map;
 
 function preload() {
 
-    game.load.image('starfield', 'assets/misc/starfield.jpg');
-    game.load.image('ball', 'assets/sprites/pangball.png');
+    game.load.tilemap('map', 'assets/tilesheets/industrial.json');
+    game.load.image('tileset', 'assets/tilesheets/Industrial-TileSheet.png');
 
 }
 
 function create() {
 
-    game.physics.startSystem(Phaser.Physics.ARCADE);
+	map= game.add.tilemap('map');
+	map.addTilesetImage('tileset');
+	layer = map.createLayer('Tile Layer 1');
+	layer.resizeworld();
+	map.setCollisionBetween(0, 100);
+	
+   // game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    game.physics.arcade.gravity.y = 200;
+    //game.physics.arcade.gravity.y = 200;
 
-    ball = game.add.sprite(400, 0, 'ball');
-    tilesprite = game.add.tileSprite(300, 450, 200, 100, 'starfield');
-	tilesprite = game.add.tileSprite(300, 450, 200, 100, 'starfield');
 
-    game.physics.enable([ ball, tilesprite ], Phaser.Physics.ARCADE);
 
-    ball.body.collideWorldBounds = true;
-    ball.body.bounce.set(1);
+    //game.physics.enable([ ball, tilesprite ], Phaser.Physics.ARCADE);
 
-    tilesprite.body.collideWorldBounds = true;
-    tilesprite.body.immovable = true;
-    tilesprite.body.allowGravity = false;
+    //ball.body.collideWorldBounds = true;
+    //ball.body.bounce.set(1);
 
-    cursors = game.input.keyboard.createCursorKeys();
+    //tilesprite.body.collideWorldBounds = true;
+    //tilesprite.body.immovable = true;
+    //tilesprite.body.allowGravity = false;
 
-}
-
-function update() {
-
-    game.physics.arcade.collide(ball, tilesprite);
-
-    if (cursors.left.isDown)
-    {
-        tilesprite.body.x -= 8;
-        tilesprite.tilePosition.x -= 8;
-    }
-    else if (cursors.right.isDown)
-    {
-        tilesprite.body.x += 8;
-        tilesprite.tilePosition.x += 8;
-    }
-
-    if (cursors.up.isDown)
-    {
-        tilesprite.tilePosition.y += 8;
-    }
-    else if (cursors.down.isDown)
-    {
-        tilesprite.tilePosition.y -= 8;
-    }
+    //cursors = game.input.keyboard.createCursorKeys();
 
 }
+
+
 
 function render() {
 
