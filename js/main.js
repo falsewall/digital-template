@@ -42,7 +42,7 @@ function create() {
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	layer.debug = true;
-	p= game.add.sprite(32, 32, 'player');
+	p= game.add.sprite(100, 100, 'player');
 	map.setCollisionBetween(100, 108);
 	
 	game.physics.enable(p);
@@ -88,7 +88,7 @@ function update() {
 
 function render() {
 
-    // game.debug.body(p);
+    game.debug.body(p);
     game.debug.bodyInfo(p, 32, 320);
 
 }
