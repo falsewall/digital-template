@@ -65,14 +65,14 @@ function doublecheck(){//run every time player hits a wall. sets touched and lea
 game.physics.arcade.collide(p, layer);
    if (cursors.up.isDown && !p.body.blocked.down ) {
 	   
-	   	if (touched >== 0) //right touched or nothing touched
+	   	if (touched < 1) //right touched or nothing touched
 	{
 		if(p.body.blocked.left)
 		{
 			touched=-1;//just hit left wall
 		}
 	}
-	if(touched <== 0)//left touched
+	if(touched > -1)//left touched
 	{
 		if(p.body.blocked.right)
 		{
@@ -85,11 +85,11 @@ game.physics.arcade.collide(p, layer);
 	}
 	
 
-      if (cursors.left.isDown && p.body.blocked.left && touched >==0 ) {
+      if (cursors.left.isDown && p.body.blocked.left && touched > -1 ) {
         p.body.velocity.x = 450;
         p.body.velocity.y = -400;
       }
-	   if (cursors.right.isDown && p.body.blocked.right && touched <== 0) {
+	   if (cursors.right.isDown && p.body.blocked.right && touched < 1) {
 		p.body.velocity.x = -450;
 		p.body.velocity.y = -400;
       }
