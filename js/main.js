@@ -35,6 +35,8 @@ function create() {
 
     ball = game.add.sprite(400, 0, 'ball');
     tilesprite = game.add.tileSprite(300, 450, 200, 100, 'starfield');
+	tilesprite = game.add.tileSprite(1, 1, 750, 600, 'starfield');
+	tilesprite = game.add.tileSprite(600, 1, 200, 100, 'starfield');
 
     game.physics.enable([ ball, tilesprite ], Phaser.Physics.ARCADE);
 
