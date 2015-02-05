@@ -24,16 +24,21 @@ var layer;
 var p;
 var cursors;
 var touched=0;
+var fx;
 
 function preload() {
 	game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tileset', 'assets/tilesheets/Industrial-TileSheet.png');
 	game.load.image('player', 'assets/sprites/phaser-dude.png');
+	game.load.audio('sfx', ['assets/sounds/effects/jump1', 'assets/sounds/effects/jump2', 'assets/sounds/effects/jump3']);
 
 
 }
 
 function create() {
+	fx = game.add.audio('sfx');
+    fx.allowMultiple = true;
+	
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.stage.backgroundColor = '#787878';
 	
@@ -121,6 +126,7 @@ function update() {
     {
         if (p.body.onFloor())
         {
+			fx.play('jump1');
             p.body.velocity.y = -200;
         }
     }
