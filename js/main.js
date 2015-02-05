@@ -61,7 +61,7 @@ function create() {
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	//layer.debug = true;
-	p= game.add.sprite(90, 500, 'dog');
+	p= game.add.sprite(90, 4000, 'dog');
 	//p.animations.add('walk');p.animations.play('walk', 20, true);
 	
 	game.physics.enable(p);
