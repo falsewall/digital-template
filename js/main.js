@@ -31,7 +31,7 @@ function preload() {
 	game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tileset', 'assets/tilesheets/Industrial-TileSheet.png');
 	game.load.image('player', 'assets/sprites/phaser-dude.png');
-	game.load.audio('dog1', 'assets/sounds/effects/jump_1.ogg');
+	game.load.audio('dog1', 'assets/sounds/effects/jump_01.ogg');
 
 
 
