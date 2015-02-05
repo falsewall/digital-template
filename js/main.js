@@ -46,6 +46,7 @@ function create() {
     dog3 = game.add.audio('dog3');
 	
 	
+	
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.stage.backgroundColor = '#787878';
 	
@@ -133,7 +134,7 @@ function update() {
     {
         if (p.body.onFloor())
         {
-			dog1.play();
+			//dog1.play();
             p.body.velocity.y = -200;
         }
     }
