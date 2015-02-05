@@ -24,20 +24,27 @@ var layer;
 var p;
 var cursors;
 var touched=0;
-var fx;
+var dog1;
+var dog2;
+var dog3;
 
 function preload() {
 	game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tileset', 'assets/tilesheets/Industrial-TileSheet.png');
 	game.load.image('player', 'assets/sprites/phaser-dude.png');
-	game.load.audio('sfx', ['assets/sounds/effects/jump1.wav', 'assets/sounds/effects/jump2.wav', 'assets/sounds/effects/jump3.wav']);
+	game.load.audio('dog1', ['assets/sounds/effects/jump1.wav');
+	game.load.audio('dog2', 'assets/sounds/effects/jump2.wav');
+	game.load.audio('dog3', 'assets/sounds/effects/jump3.wav');
 
 
 }
 
 function create() {
-	fx = game.add.audio('sfx');
-    fx.allowMultiple = true;
+
+	dog1 = game.add.audio('dog1');
+    dog2 = game.add.audio('dog2');
+    dog3 = game.add.audio('dog3');
+	
 	
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.stage.backgroundColor = '#787878';
@@ -126,7 +133,7 @@ function update() {
     {
         if (p.body.onFloor())
         {
-			fx.play('jump1');
+			dog1.play();
             p.body.velocity.y = -200;
         }
     }
