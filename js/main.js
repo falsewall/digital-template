@@ -19,6 +19,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 
 var map;
+var tileset;
 var layer;
 var p;
 var cursors;
@@ -42,7 +43,7 @@ function create() {
 	layer.resizeWorld();
 	layer.debug = true;
 	p= game.add.sprite(32, 32, 'player');
-	map.setCollisionBetween(0, 100);
+	map.setCollisionBetween(0, 59);
 	
 	game.physics.enable(p);
 
