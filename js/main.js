@@ -25,6 +25,8 @@ var p;
 var cursors;
 var touched=0;
 var jump;
+var jump2;
+var jump3;
 
 
 function preload() {
@@ -32,6 +34,8 @@ function preload() {
     game.load.image('tileset', 'assets/tilesheets/Industrial-TileSheet.png');
 	game.load.image('player', 'assets/sprites/phaser-dude.png');
 	game.load.audio('dog1', 'assets/sounds/effects/jump_01.ogg');
+	game.load.audio('dog2', 'assets/sounds/effects/jump_02.ogg');
+	game.load.audio('dog3', 'assets/sounds/effects/jump_03.ogg');
 
 
 
@@ -40,6 +44,8 @@ function preload() {
 function create() {
 
 	jump = game.add.audio('dog1');
+	jump2 = game.add.audio('dog2');
+	jump3 = game.add.audio('dog3');
 
 	
 	
@@ -58,7 +64,7 @@ function create() {
 	
 	game.physics.enable(p);
 
-    game.physics.arcade.gravity.y = 250;
+    game.physics.arcade.gravity.y = 100;
 
     p.body.bounce.y = 0.1;
     p.body.linearDamping = 1;
@@ -76,10 +82,12 @@ game.physics.arcade.collide(p, layer);
    if (cursors.up.isDown && !p.body.blocked.down ) {
 	   
 		if (cursors.left.isDown && p.body.blocked.left && touched > -1 ) {
+			jump2.play();
 			p.body.velocity.x = 450;
 			p.body.velocity.y = -400;
 		}
 		if (cursors.right.isDown && p.body.blocked.right && touched < 1) {
+			jump3.play();
 			p.body.velocity.x = -450;
 			p.body.velocity.y = -400;
 		}
