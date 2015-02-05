@@ -22,9 +22,10 @@ var map;
 var layer;
 
 function preload() {
-
-    game.load.tilemap('map', 'assets/tilesheets/industrial.json');
+	
     game.load.image('tileset', 'assets/tilesheets/Industrial-TileSheet.png');
+    game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
+
 
 }
 
