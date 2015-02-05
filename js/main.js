@@ -76,7 +76,10 @@ function update() {
 		p.body.velocity.y = -400;
       }
     }
-	p.body.velocity.x = 0;
+	if(p.body.velocity.x !== 0)
+	{
+		p.body.velocity.x-=5;
+	}
     if (cursors.up.isDown)
     {
         if (p.body.onFloor())
