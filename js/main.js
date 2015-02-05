@@ -14,42 +14,70 @@ window.onload = function() {
     "use strict";
     
 
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create });
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
+
+var ball;
+var tilesprite;
+var cursors;
 
 function preload() {
 
-    game.load.spritesheet('mummy', 'assets/sprites/metalslug_mummy37x45.png', 37, 45, 18);
-    game.load.spritesheet('monster', 'assets/sprites/metalslug_monster39x40.png', 39, 40);
+    game.load.image('starfield', 'assets/misc/starfield.jpg');
+    game.load.image('ball', 'assets/sprites/pangball.png');
 
 }
-
-var sprite;
 
 function create() {
 
-    sprite = game.add.sprite(300, 200, 'monster');
+    game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    sprite.animations.add('walk', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
-    sprite.animations.play('walk', 20, true);
-    sprite.scale.set(4);
-    sprite.smoothed = false;
+    game.physics.arcade.gravity.y = 200;
 
-    game.input.onDown.add(changeTexture, this);
+    ball = game.add.sprite(400, 0, 'ball');
+    tilesprite = game.add.tileSprite(300, 450, 200, 100, 'starfield');
+
+    game.physics.enable([ ball, tilesprite ], Phaser.Physics.ARCADE);
+
+    ball.body.collideWorldBounds = true;
+    ball.body.bounce.set(1);
+
+    tilesprite.body.collideWorldBounds = true;
+    tilesprite.body.immovable = true;
+    tilesprite.body.allowGravity = false;
+
+    cursors = game.input.keyboard.createCursorKeys();
 
 }
 
-function changeTexture() {
+function update() {
 
-    if (sprite.key === 'monster')
+    game.physics.arcade.collide(ball, tilesprite);
+
+    if (cursors.left.isDown)
     {
-        sprite.loadTexture('mummy', 0, false);
+        tilesprite.body.x -= 8;
+        tilesprite.tilePosition.x -= 8;
     }
-    else
+    else if (cursors.right.isDown)
     {
-        sprite.loadTexture('monster', 0, false);
+        tilesprite.body.x += 8;
+        tilesprite.tilePosition.x += 8;
     }
 
-    // sprite.smoothed = false;
+    if (cursors.up.isDown)
+    {
+        tilesprite.tilePosition.y += 8;
+    }
+    else if (cursors.down.isDown)
+    {
+        tilesprite.tilePosition.y -= 8;
+    }
+
+}
+
+function render() {
+
+    // game.debug.body(tilesprite);
 
 }
 };
