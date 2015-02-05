@@ -66,14 +66,15 @@ function update() {
     game.physics.arcade.collide(p, layer);
 	if (p.body.touching.down)
 	{
-		if(p.body.velocity.x > 0)
-		{
-			p.body.velocity.x-=5;
-		}
 	    if(p.body.velocity.x < 0)
 		{
 			p.body.velocity.x+=5;
 		}
+		if(p.body.velocity.x > 0)
+		{
+			p.body.velocity.x-=5;
+		}
+
 	
 	}
    if (cursors.up.isDown && !p.body.touching.down ) {
