@@ -49,22 +49,7 @@ function create() {
 	jump3 = game.add.audio('dog3');
 
 
-    var group = game.make.group();
 
-    //  Add a bunch of sprites in random positions to the group
-    for (var i = 0; i < 40; i++)
-    {
-        group.create(game.world.randomX, game.world.randomY, 'heart_beat');
-    }
-
-    //  This is the BitmapData we're going to be drawing to
-    var bmd = game.add.bitmapData(game.width, game.height);
-
-    bmd.addToWorld();
-
-    //  Draw the group
-    bmd.drawGroup(group);
-	
 	
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.stage.backgroundColor = '#787878';
@@ -90,8 +75,23 @@ function create() {
     game.camera.follow(p);
 
     cursors = game.input.keyboard.createCursorKeys();
+//////////////////////////////////////
+    var group = game.make.group();
 
+    //  Add a bunch of sprites in random positions to the group
+    for (var i = 0; i < 40; i++)
+    {
+        group.create(game.world.randomX, game.world.randomY, 'heart_beat');
+    }
 
+    //  This is the BitmapData we're going to be drawing to
+    var bmd = game.add.bitmapData(game.width, game.height);
+
+    bmd.addToWorld();
+
+    //  Draw the group
+    bmd.drawGroup(group);
+	
 
 }
 function doublecheck(){//run every time player hits a wall. sets touched and leaves it till another wall is hit or ground is landed
