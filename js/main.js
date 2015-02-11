@@ -62,7 +62,7 @@ function create() {
 	layer.resizeWorld();
 	//layer.debug = true;
 	p= game.add.sprite(90, 2500, 'heart_beat');
-	p.animations.add('beat');p.animations.play('beat', 20, true);
+	p.animations.add('beat');p.animations.play('beat', 10, true);
 	
 	game.physics.enable(p);
 
