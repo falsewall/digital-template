@@ -48,7 +48,22 @@ function create() {
 	jump2 = game.add.audio('dog2');
 	jump3 = game.add.audio('dog3');
 
-	
+
+    var group = game.make.group();
+
+    //  Add a bunch of sprites in random positions to the group
+    for (var i = 0; i < 40; i++)
+    {
+        group.create(game.world.randomX, game.world.randomY, 'heart_beat');
+    }
+
+    //  This is the BitmapData we're going to be drawing to
+    var bmd = game.add.bitmapData(game.width, game.height);
+
+    bmd.addToWorld();
+
+    //  Draw the group
+    bmd.drawGroup(group);
 	
 	
 	game.physics.startSystem(Phaser.Physics.ARCADE);
