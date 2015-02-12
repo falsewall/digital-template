@@ -155,8 +155,7 @@ function update() {
 		{
 			p.body.velocity.x-=15;
 		}
-		if(p.body.velocity.x === 0)
-			p.animations.play('standing', 5, true);
+
 	
 	}
 	else 
@@ -169,7 +168,9 @@ function update() {
 		{
 			p.body.velocity.x-=15;
 		}
-		if(p.body.velocity.x === 0)
+	}
+	if(p.body.velocity.x == 0)
+	{
 			p.animations.play('standing', 5, true);
 	}
 
