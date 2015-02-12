@@ -46,7 +46,7 @@ function preload() {
 	game.load.audio('type1', 'assets/sounds/effects/type1.ogg');
 	game.load.spritesheet('heart_beat', 'assets/sprites/heart_beat_32x32.png', 32, 32);
 	game.load.spritesheet('panda', 'assets/sprites/Panda.png', 32, 32);
-	//game.load.image('pandicle', 'assets/sprites/pandaParticle.png');
+	game.load.image('pandicle', 'assets/sprites/pandaParticle.png');
 
 	
 
@@ -110,13 +110,13 @@ function create() {
 	hud = game.add.text(0, 0, 'Hearts: '+grabbed);
     hud.fixedToCamera= true;
 	
-	//emitter = game.add.emitter(0, 0, 1000);
-	//emitter.makeParticles('pandicle');
-	//p.addChild(emitter);
+	emitter = game.add.emitter(0, 0, 1000);
+	emitter.makeParticles('pandicle');
+	p.addChild(emitter);
 	
-	// emitter.lifespan = 500;
-	//emitter.maxParticleSpeed = new Phaser.Point(-100,50);
-	//emitter.minParticleSpeed = new Phaser.Point(-200,-50);
+	emitter.lifespan = 500;
+	emitter.maxParticleSpeed = new Phaser.Point(-100,50);
+	emitter.minParticleSpeed = new Phaser.Point(-200,-50);
 
 
 
@@ -248,7 +248,7 @@ function update() {
     {
 		p.animations.play('right', 10, true);
         p.body.velocity.x = 500;
-		//emitter.emitParticle();
+		emitter.emitParticle();
     }
 	
 
