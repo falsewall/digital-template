@@ -70,7 +70,7 @@ function create() {
 	p.animations.add('jump', [5, 6, 7], 10, true);
 	p.animations.add('left', [25, 26, 27, 31, 32], 10, true);
     p.animations.add('right', [15, 16, 17, 20, 21], 10, true);
-	p.animations.play('right', 10, true);
+
 	
 	game.physics.enable(p);
 
@@ -164,6 +164,7 @@ function update() {
     {
         if (p.body.onFloor())
         {
+			p.animations.play('jump', 10, true);
 			jump.play();
             p.body.velocity.y = -500;
         }
@@ -172,9 +173,11 @@ function update() {
     if (cursors.left.isDown)
     {
         p.body.velocity.x = -500;
+		p.animations.play('left', 10, true);
     }
     else if (cursors.right.isDown)
     {
+		p.animations.play('right', 10, true);
         p.body.velocity.x = 500;
     }
 
