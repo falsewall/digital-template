@@ -27,7 +27,7 @@ var touched=0;
 var jump;
 var jump2;
 var jump3;
-var coinNoise
+var coinNoise;
 var heart;
 var bmd;
 var group;
