@@ -96,7 +96,7 @@ function create() {
 //////////////////////////////////////
 	heartsetup();
 	var text = game.add.text(0, 0, '- HudTofollowyou');
-    p.addChild(text);
+    p.addChild(null);
 	
 	p.cameraOffset.x = 10;
 	p.cameraOffset.y = 100;
