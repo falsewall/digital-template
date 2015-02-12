@@ -132,7 +132,7 @@ function collisionHandler (player, pickup) {
     //  If the player collides with the chillis then they get eaten :)
     //  The chilli frame ID is 17
 	grabbed++;
-	hud.text = 'Hearts: '+grabbed;
+	hud.setText( 'Hearts: '+grabbed);
 	coinNoise.play();
     pickup.kill();
 }
