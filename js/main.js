@@ -215,6 +215,10 @@ function update() {
 		{
 			p.body.velocity.x-=100;
 		}
+		if(p.body.velocity.x === 0)
+		{
+			p.animations.play('standing', 5, true);
+		}
 
 	
 	}
@@ -228,11 +232,12 @@ function update() {
 		{
 			p.body.velocity.x-=50;
 		}
-	}
-	if(p.body.velocity.x === 0)
-	{
+		if(p.body.velocity.x === 0)
+		{
 			p.animations.play('standing', 5, true);
+		}
 	}
+
 
     if (cursors.up.isDown)
     {
