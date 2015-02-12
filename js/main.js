@@ -254,7 +254,11 @@ function update() {
 	if(grabbed=== 40)
 	{
 		emitter.emitParticle();
-
+		text = game.add.text(game.world.centerX, game.world.centerY, "- You have clicked 10 times !", {
+        font: "65px Arial",
+        fill: "#ff0044",
+        align: "center"
+    });
 	}
 }
 
