@@ -112,7 +112,7 @@ function create() {
 	
 	emitter = game.add.emitter(0, 0, 1000);
 	emitter.makeParticles('pandicle');
-	p.addChild(emitter);
+	//p.addChild(emitter);
 	
 	 emitter.lifespan = 500;
 	emitter.maxParticleSpeed = new Phaser.Point(-100,50);
