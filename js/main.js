@@ -32,6 +32,7 @@ var music;
 var heart;
 var bmd;
 var group;
+var hud;
 
 function preload() {
 	game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
@@ -97,7 +98,7 @@ function create() {
 	heartsetup();
 
 	
-	var hud = game.add.text(0, 0, 'Hearts: '+grabbed);
+	hud = game.add.text(0, 0, 'Hearts: '+grabbed);
     hud.fixedToCamera= true;
 
 
