@@ -27,6 +27,7 @@ var touched=0;
 var jump;
 var jump2;
 var jump3;
+var coinNoise
 var heart;
 var bmd;
 var group;
@@ -38,6 +39,7 @@ function preload() {
 	game.load.audio('dog1', 'assets/sounds/effects/jump_01.ogg');
 	game.load.audio('dog2', 'assets/sounds/effects/jump_02.ogg');
 	game.load.audio('dog3', 'assets/sounds/effects/jump_03.ogg');
+	game.load.audio('coin', 'assets/sounds/effects/coin.ogg');
 	game.load.spritesheet('heart_beat', 'assets/sprites/heart_beat_32x32.png', 32, 32);
 	game.load.spritesheet('panda', 'assets/sprites/Panda.png', 32, 32);
 
@@ -50,6 +52,7 @@ function create() {
 	jump = game.add.audio('dog1');
 	jump2 = game.add.audio('dog2');
 	jump3 = game.add.audio('dog3');
+	coinNoise = game.add.audio('coin');
 
 
 
@@ -115,6 +118,7 @@ function collisionHandler (player, pickup) {
     //  If the player collides with the chillis then they get eaten :)
     //  The chilli frame ID is 17
 	grabbed++;
+	coinNoise.play();
     pickup.kill();
 }
 
