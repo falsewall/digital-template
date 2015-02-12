@@ -17,7 +17,7 @@ window.onload = function() {
 var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
 
 
-var grabbed = 0;
+var grabbed = 40;
 var map;
 var tileset;
 var layer;
@@ -34,6 +34,7 @@ var bmd;
 var group;
 var hud;
 var emitter;
+var winnerText;
 
 function preload() {
 	game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
@@ -107,7 +108,7 @@ function create() {
 	heartsetup();
 
 	
-	hud = game.add.text(0, 0, 'Hearts: '+grabbed);
+	hud = game.add.text(0, 0, 'Hearts remaining: '+grabbed);
     hud.fixedToCamera= true;
 	
 	emitter = game.add.emitter(0, 0, 1000);
@@ -149,8 +150,8 @@ function heartsetup(){
 function collisionHandler (player, pickup) {
     //  If the player collides with the chillis then they get eaten :)
     //  The chilli frame ID is 17
-	grabbed++;
-	hud.setText( 'Hearts: '+grabbed);
+	grabbed--;
+	hud.setText( 'Hearts Remaining: '+grabbed);
 	coinNoise.play();
     pickup.kill();
 }
@@ -204,11 +205,11 @@ function update() {
 	{
 	    if(p.body.velocity.x < 0)
 		{
-			p.body.velocity.x+=50;
+			p.body.velocity.x+=100;
 		}
 		if(p.body.velocity.x > 0)
 		{
-			p.body.velocity.x-=50;
+			p.body.velocity.x-=100;
 		}
 
 	
@@ -217,11 +218,11 @@ function update() {
 	{
 		if(p.body.velocity.x < 0)
 		{
-			p.body.velocity.x+=10;
+			p.body.velocity.x+=50;
 		}
 		if(p.body.velocity.x > 0)
 		{
-			p.body.velocity.x-=10;
+			p.body.velocity.x-=50;
 		}
 	}
 	if(p.body.velocity.x == 0)
@@ -248,16 +249,23 @@ function update() {
     {
 		p.animations.play('right', 10, true);
         p.body.velocity.x = 500;
-		emitter.emitParticle();
+		
     }
-	
-
+	if(grabbed=== 40)
+	{
+		emitter.emitParticle();
+		text = game.add.text(game.world.centerX, game.world.centerY, "- You have clicked -\n0 times !", {
+        font: "65px Arial",
+        fill: "#ff0044",
+        align: "center"
+    });
+	}
 }
 
 function render() {
 
-    game.debug.body(p);
-    game.debug.bodyInfo(p, 32, 320);
+    //game.debug.body(p);
+    //game.debug.bodyInfo(p, 32, 320);
 
 }
 
