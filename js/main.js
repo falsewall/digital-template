@@ -257,7 +257,7 @@ function update() {
         p.body.velocity.x = 500;
 		
     }
-	if(grabbed=== 40)
+	if(grabbed=== 39)
 	{
 		emitter.emitParticle();
 		winnerText.setText("The pandas live on!");
