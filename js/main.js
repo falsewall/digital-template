@@ -28,6 +28,8 @@ var jump;
 var jump2;
 var jump3;
 var heart;
+var bmd;
+var group;
 
 
 function preload() {
@@ -63,8 +65,7 @@ function create() {
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	//layer.debug = true;
-	heart = game.add.sprite(90, 2500, 'heart_beat');
-	heart.animations.add('beat');
+
 	p= game.add.sprite(90, 2500, 'panda');
 	p.animations.add('stand', [0, 1], 10, true);
 	p.animations.add('jump', [5, 6, 7], 10, true);
@@ -84,7 +85,17 @@ function create() {
 
     cursors = game.input.keyboard.createCursorKeys();
 //////////////////////////////////////
-    var group = game.make.group();
+	heartsetup();
+
+	
+
+}
+function heartsetup(){
+	heart = game.add.sprite(90, 2500, 'heart_beat');
+	heart.animations.add('beat');
+	heart.play('beat', 5, true);
+	
+	    group = game.make.group();
 
     //  Add a bunch of sprites in random positions to the group
     for (var i = 0; i < 40; i++)
@@ -93,7 +104,7 @@ function create() {
     }
 
     //  This is the BitmapData we're going to be drawing to
-    var bmd = game.add.bitmapData(600, 3400);
+    bmd = game.add.bitmapData(600, 3400);
 
     bmd.addToWorld();
 
@@ -102,6 +113,7 @@ function create() {
 	
 
 }
+
 function doublecheck(){//run every time player hits a wall. sets touched and leaves it till another wall is hit or ground is landed
 game.physics.arcade.collide(p, layer);
    if (cursors.up.isDown && !p.body.blocked.down ) {
