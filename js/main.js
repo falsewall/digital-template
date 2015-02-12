@@ -71,18 +71,18 @@ function create() {
 	map = game.add.tilemap('map');
 	map.addTilesetImage('Industrial-TileSheet', 'tileset');
 	map.setCollisionBetween(0, 1);// 104 66 99 24 10 0 1
-	map.setCollision(104);
-	map.setCollision(66);
-	map.setCollision(99);
-	map.setCollision(24);
-	map.setColission(10);
+	//map.setCollision(104);
+	//map.setCollision(66);
+	//map.setCollision(99);
+	//map.setCollision(24);
+	//map.setColission(10);
 	
 	
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	//layer.debug = true;
 
-	p= game.add.sprite(0, 0, 'panda');
+	p= game.add.sprite(500, 500, 'panda');
 	p.animations.add('stand', [0, 1], 10, true);
 	p.animations.add('jump', [5, 6, 7], 10, true);
 	p.animations.add('left', [25, 26, 27, 31, 32], 10, true);
