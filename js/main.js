@@ -99,6 +99,9 @@ function create() {
     var style = { font: "65px Arial", fill: "#ff0044", align: "center" };
 
     var t = game.add.text(game.world.centerX-300, 3000, text, style);
+	
+	var scoreText = game.add.bitmapText(game.width/2, 10, '',grabbed.toString(), 24);
+    scoreText.visible = false;
 }
 
 function heartsetup(){
