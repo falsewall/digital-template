@@ -99,10 +99,10 @@ function create() {
 	cam.fixedToCamera = true;
 	
 	var text = game.add.text(90, 2500, '- HudTofollowyou');
-    cam.addChild(null);
+    cam.addChild(p);
 	
 	p.cameraOffset.x = 10;
-	p.cameraOffset.y = 100;
+	p.cameraOffset.y = 10;
 
 
 }
