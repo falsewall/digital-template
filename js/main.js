@@ -87,9 +87,9 @@ function create() {
 	heartsetup();
 	
 	
-emitter = game.add.emitter(120, 2900, 500);
+emitter = game.add.emitter(672, 2900, 500);
 emitter.makeParticles('player');
-emitter.setAlpha(5, 20, 10);
+emitter.setAlpha(5, 20);
 
 //To use gravity on the emitter, start the physics system
 game.physics.startSystem(Phaser.Physics.ARCADE);
