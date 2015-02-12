@@ -100,12 +100,12 @@ function heartsetup(){
 		group.physicsBodyType = Phaser.Physics.ARCADE;
 
     //  Add a bunch of sprites in random positions to the group
-    for (var i = 0; i < 40; i++)
+   /* for (var i = 0; i < 40; i++)
     {
         var c = group.create(game.world.randomX, game.world.randomY, 'heart_beat');
 		c.name = 'heart' + i;
 		c.body.immovable = true;
-    }
+    }*/
 
     //  This is the BitmapData we're going to be drawing to
     bmd = game.add.bitmapData(600, 3400);
