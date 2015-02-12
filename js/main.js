@@ -103,10 +103,10 @@ function heartsetup(){
         var c = group.create(game.world.randomX, game.world.randomY, 'heart_beat');
 		c.name = 'heart' + i;
 		c.body.immovable = true;
-
+		//c.animations.add('beat');
+		//c.play('beat', 5, true));
     }
-	var frameNames = Phaser.Animation.generateFrameNames('heart_beat_32x32', 0, 3, '', 4);
-	group.callAll('animations.add', 'animations', 'beatit', frameNames, 30, true, false);
+	group.callAll('animations.add', 'animations', 'beatit',[0,1,2,3] , 5, true, false);
 	group.callAll('play', null, 'beatit');
     
 
