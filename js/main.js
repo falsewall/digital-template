@@ -55,7 +55,8 @@ function create() {
 	jump2 = game.add.audio('dog2');
 	jump3 = game.add.audio('dog3');
 	coinNoise = game.add.audio('coin');
-	music = game.add.audio('type1',1 , true);
+	music = game.add.audio('type1', 1 , true);
+	music.play('', 0, 1, true);
 	
 
 
