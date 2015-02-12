@@ -106,7 +106,7 @@ function heartsetup(){
 		//c.animations.add('beat');
 		//c.play('beat', 5, true));
     }
-	group.callAll('animations.add', 'animations', 'beatit',[0,1,2,3] , 5, true, false);
+	group.callAll('animations.add', 'animations', 'beatit',[0,1,2,3] , 5, true);
 	group.callAll('play', null, 'beatit');
     
 
