@@ -85,18 +85,8 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
 //////////////////////////////////////
 	heartsetup();
-	
-	
-emitter = game.add.emitter(672, 2900, 500);
-emitter.makeParticles('player');
-emitter.setAlpha(5, 20);
-
-//To use gravity on the emitter, start the physics system
-game.physics.startSystem(Phaser.Physics.ARCADE);
-emitter.gravity = 200;
-emitter.start();
-
 }
+
 function heartsetup(){
 	
 	heart = game.add.sprite(90, 2500, 'heart_beat');
@@ -116,15 +106,10 @@ function heartsetup(){
 		//c.animations.add('beat');
 		//c.play('beat', 5, true));
     }
-
-    //  This is the BitmapData we're going to be drawing to
-   /* bmd = game.add.bitmapData(600, 3400);
-
-    bmd.addToWorld();
-
-    //  Draw the group
-    bmd.drawGroup(group);
-	*/
+	var frameNames = Phaser.Animation.generateFrameNames('heart_beat_32x32', 0, 3, '', 4);
+	group.callAll('animations.add', 'animations', 'beatit, frameNames, 30, true, false);
+	group.callAll('play', null, 'beatit');
+    
 
 }
 function collisionHandler (player, pickup) {
