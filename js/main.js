@@ -85,8 +85,16 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
 //////////////////////////////////////
 	heartsetup();
-
 	
+	
+emitter = game.add.emitter(120, 3000, maxParticles);
+emitter.makeParticles('image');
+emitter.setAlpha(min, max, rate, easing, yoyo);
+
+//To use gravity on the emitter, start the physics system
+game.physics.startSystem(Phaser.Physics.ARCADE);
+emitter.gravity = 200;
+emitter.start();
 
 }
 function heartsetup(){
