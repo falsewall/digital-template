@@ -98,7 +98,7 @@ function create() {
 	var cam = game.add.sprite(90,2500);
 	cam.fixedToCamera = true;
 	
-	var text = game.add.text(90, 2500, '- HudTofollowyou');
+	var text = game.add.text(0, 0, '- HudTofollowyou');
     cam.addChild(text);
 	
 	//p.cameraOffset.x = 10;
