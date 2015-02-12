@@ -95,8 +95,11 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
 //////////////////////////////////////
 	heartsetup();
-		    var text = game.add.text(0, 0, '- HudTofollowyou');
+	var text = game.add.text(0, 0, '- HudTofollowyou');
     p.addChild(text);
+	
+	p.cameraOffset.x = 10;
+	p.cameraOffset.y = 100;
 
 
 }
