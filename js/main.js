@@ -31,7 +31,6 @@ var heart;
 var bmd;
 var group;
 
-
 function preload() {
 	game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tileset', 'assets/tilesheets/Industrial-TileSheet.png');
@@ -91,7 +90,6 @@ function create() {
 
 }
 function heartsetup(){
-	var frameNames = Phaser.Animation.generateFrameNames('heart_beat', 0, 3, '', 4);
 	
 	heart = game.add.sprite(90, 2500, 'heart_beat');
 	heart.animations.add('beat');
@@ -107,9 +105,10 @@ function heartsetup(){
         var c = group.create(game.world.randomX, game.world.randomY, 'heart_beat');
 		c.name = 'heart' + i;
 		c.body.immovable = true;
+		c.animations.add('beat');
+		c.play('beat', 5, true));
     }
-	group.callAll('animations.add', 'animations', 'beats', frameNames, 30, true, false);
-	group.callAll('play', null, 'beats');
+
     //  This is the BitmapData we're going to be drawing to
    /* bmd = game.add.bitmapData(600, 3400);
 
