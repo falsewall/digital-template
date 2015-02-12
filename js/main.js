@@ -85,7 +85,7 @@ function create() {
     }
 
     //  This is the BitmapData we're going to be drawing to
-    var bmd = game.add.bitmapData(game.width, game.height);
+    var bmd = game.add.bitmapData(600, 3400);
 
     bmd.addToWorld();
 
