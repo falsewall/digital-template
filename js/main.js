@@ -145,8 +145,6 @@ function heartsetup(){
         var c = group.create(game.world.randomX, game.world.randomY, 'heart_beat');
 		c.name = 'heart' + i;
 		c.body.immovable = true;
-		//c.animations.add('beat');
-		//c.play('beat', 5, true));
     }
 	group.callAll('animations.add', 'animations', 'beatit',[0,1,2,3] , 5, true);
 	group.callAll('play', null, 'beatit');
@@ -249,15 +247,15 @@ function update() {
     if (cursors.left.isDown)
     {
         p.body.velocity.x = -500;
-		p.animations.play('left', 10, true);
+		p.animations.play('left', 15, true);
     }
     else if (cursors.right.isDown)
     {
-		p.animations.play('right', 10, true);
+		p.animations.play('right', 15, true);
         p.body.velocity.x = 500;
 		
     }
-	if(grabbed=== 39)
+	if(grabbed=== 0)
 	{
 		emitter.emitParticle();
 		winnerText.setText("The pandas live on!");
