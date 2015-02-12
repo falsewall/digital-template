@@ -149,11 +149,11 @@ function update() {
 	{
 	    if(p.body.velocity.x < 0)
 		{
-			p.body.velocity.x+=10;
+			p.body.velocity.x+=50;
 		}
 		if(p.body.velocity.x > 0)
 		{
-			p.body.velocity.x-=10;
+			p.body.velocity.x-=50;
 		}
 
 	
