@@ -149,26 +149,28 @@ function update() {
 	{
 	    if(p.body.velocity.x < 0)
 		{
-			p.body.velocity.x+=10;
+			p.body.velocity.x+=15;
 		}
 		if(p.body.velocity.x > 0)
 		{
-			p.body.velocity.x-=10;
+			p.body.velocity.x-=15;
 		}
-		p.animations.play('standing', 5, true);
+		if(p.body.velocity.x === 0)
+			p.animations.play('standing', 5, true);
 	
 	}
 	else 
 	{
 		if(p.body.velocity.x < 0)
 		{
-			p.body.velocity.x+=5;
+			p.body.velocity.x+=15;
 		}
 		if(p.body.velocity.x > 0)
 		{
-			p.body.velocity.x-=5;
+			p.body.velocity.x-=15;
 		}
-		p.animations.play('standing', 5, true);
+		if(p.body.velocity.x === 0)
+			p.animations.play('standing', 5, true);
 	}
 
     if (cursors.up.isDown)
