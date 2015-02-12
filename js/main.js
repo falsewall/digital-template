@@ -70,8 +70,8 @@ function create() {
 	
 	map = game.add.tilemap('map');
 	map.addTilesetImage('Industrial-TileSheet', 'tileset');
-	map.setCollisionBetween(0, 1);// 104 66 99 24 10 0 1
-	map.setCollisionBetween(104, 104);
+	map.setCollisionBetween(0, 2);// 104 66 99 24 10 0 1
+	map.setCollisionBetween(104, 105);
 	map.setCollision(66);
 	map.setCollision(99);
 	map.setCollision(24);
