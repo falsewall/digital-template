@@ -174,8 +174,8 @@ function update() {
 
 function render() {
 
-    //game.debug.body(p);
-    //game.debug.bodyInfo(p, 32, 320);
+    game.debug.body(p);
+    game.debug.bodyInfo(p, 32, 320);
 
 }
 
