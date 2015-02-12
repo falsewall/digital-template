@@ -59,6 +59,8 @@ function create() {
 	music.play('', 0, 1, true);
 	
 
+	
+
 
 
 	
@@ -93,6 +95,10 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
 //////////////////////////////////////
 	heartsetup();
+		    var text = "- phaser -\n with a sprinkle of \n pixi dust.";
+    var style = { font: "65px Arial", fill: "#ff0044", align: "center" };
+
+    var t = game.add.text(game.world.centerX-300, 0, text, style);
 }
 
 function heartsetup(){
