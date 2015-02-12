@@ -38,7 +38,7 @@ function preload() {
 	game.load.audio('dog2', 'assets/sounds/effects/jump_02.ogg');
 	game.load.audio('dog3', 'assets/sounds/effects/jump_03.ogg');
 	game.load.spritesheet('heart_beat', 'assets/sprites/heart_beat_32x32.png', 32, 32);
-	game.load.spritesheet('panda', 'assets/sprites/Panda.png', 30, 31);
+	game.load.spritesheet('panda', 'assets/sprites/Panda.png', 32, 32);
 
 
 
@@ -66,7 +66,7 @@ function create() {
 	heart = game.add.sprite(90, 2500, 'heart_beat');
 	heart.animations.add('beat');
 	p= game.add.sprite(90, 2500, 'panda');
-	p.animation.add('stand', [0, 1], 10, true);
+	//p.animation.add('stand', [0, 1], 10, true);
 	//p.animation.add('jump', [5, 6, 7], 10, true);
 	//p.animations.add('left', [25, 26, 27, 31, 32], 10, true);
     //p.animations.add('right', [15, 16, 17, 20, 21], 10, true);
