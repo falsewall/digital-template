@@ -70,7 +70,7 @@ function create() {
 
 	
 	game.physics.startSystem(Phaser.Physics.ARCADE);
-	game.stage.backgroundColor = '#787878';
+	game.stage.backgroundColor = '#154632';
 	
 	map = game.add.tilemap('map');
 	map.addTilesetImage('Industrial-TileSheet', 'tileset');
@@ -254,11 +254,7 @@ function update() {
 	if(grabbed=== 40)
 	{
 		emitter.emitParticle();
-		text = game.add.text(game.world.centerX, game.world.centerY, "- You have clicked -\n0 times !", {
-        font: "65px Arial",
-        fill: "#ff0044",
-        align: "center"
-    });
+
 	}
 }
 
