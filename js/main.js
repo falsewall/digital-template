@@ -47,7 +47,7 @@ function preload() {
 	game.load.spritesheet('heart_beat', 'assets/sprites/heart_beat_32x32.png', 32, 32);
 	game.load.spritesheet('panda', 'assets/sprites/Panda.png', 32, 32);
 	//game.load.image('pandicle', 'assets/sprites/pandaParticle.png');
-}
+
 	
 
 
