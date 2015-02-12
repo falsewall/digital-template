@@ -72,10 +72,10 @@ function create() {
 	map.addTilesetImage('Industrial-TileSheet', 'tileset');
 	map.setCollisionBetween(0, 2);// 104 66 99 24 10 0 1
 	map.setCollisionBetween(104, 105);
-	map.setCollision(66);
-	map.setCollision(99);
-	map.setCollision(24);
-	map.setCollision(10);
+	map.setCollisionBetween(66, 67);
+	map.setCollisionBetween(99, 100);
+	map.setCollisionBetween(24, 25);
+	map.setCollisionBetween(10, 11);
 	
 	
 	layer = map.createLayer('Tile Layer 1');
