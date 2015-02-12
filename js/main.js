@@ -17,7 +17,7 @@ window.onload = function() {
 var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
 
 
-
+var grabbed = 0;
 var map;
 var tileset;
 var layer;
@@ -91,6 +91,8 @@ function create() {
 
 }
 function heartsetup(){
+	var frameNames = Phaser.Animation.generateFrameNames('heart_beat', 0, 3, '', 4);
+	
 	heart = game.add.sprite(90, 2500, 'heart_beat');
 	heart.animations.add('beat');
 	heart.play('beat', 5, true);
@@ -106,22 +108,23 @@ function heartsetup(){
 		c.name = 'heart' + i;
 		c.body.immovable = true;
     }
-
+	group.callAll('animations.add', 'animations', 'beats', frameNames, 30, true, false);
+	group.callAll('play', null, 'beats');
     //  This is the BitmapData we're going to be drawing to
-    bmd = game.add.bitmapData(600, 3400);
+   /* bmd = game.add.bitmapData(600, 3400);
 
     bmd.addToWorld();
 
     //  Draw the group
     bmd.drawGroup(group);
-	
+	*/
 
 }
 function collisionHandler (player, pickup) {
     //  If the player collides with the chillis then they get eaten :)
     //  The chilli frame ID is 17
-
-        pickup.kill();
+	grabbed++;
+    pickup.kill();
 }
 
 function doublecheck(){//run every time player hits a wall. sets touched and leaves it till another wall is hit or ground is landed
