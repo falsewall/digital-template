@@ -66,7 +66,7 @@ function create() {
 	heart = game.add.sprite(90, 2500, 'heart_beat');
 	heart.animations.add('beat');
 	p= game.add.sprite(90, 2500, 'panda');
-	//p.animation.add('stand', [0, 1], 10, true);
+	p.animation.add('stand', [0, 1], 10, true);
 	//p.animation.add('jump', [5, 6, 7], 10, true);
 	//p.animations.add('left', [25, 26, 27, 31, 32], 10, true);
     //p.animations.add('right', [15, 16, 17, 20, 21], 10, true);
