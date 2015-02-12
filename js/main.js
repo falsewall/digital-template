@@ -109,8 +109,8 @@ function create() {
 
 	
 	hud = game.add.text(0, 0, 'Hearts remaining: '+grabbed);
-	winnerText = game.add.text(0, 0, "- You have clicked 10 times !", {
-        font: "72px Arial",
+	winnerText = game.add.text(0, 0, "The Pandas Live on!", {
+        font: "69px Arial",
         fill: "#ff0040",
         align: "center"
     });
