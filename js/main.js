@@ -165,7 +165,7 @@ game.physics.arcade.collide(p, layer);
 
 function update() {
 
-    game.physics.arcade.collide(p, layer);
+    //game.physics.arcade.collide(p, layer);
 	game.physics.arcade.collide(p, group, collisionHandler, null, this);
     game.physics.arcade.collide(group, group);
 	doublecheck();//should deal with walljumping
