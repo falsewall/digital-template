@@ -33,6 +33,7 @@ var heart;
 var bmd;
 var group;
 var hud;
+var emitter;
 
 function preload() {
 	game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
