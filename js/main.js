@@ -46,7 +46,7 @@ function preload() {
 	game.load.audio('type1', 'assets/sounds/effects/type1.ogg');
 	game.load.spritesheet('heart_beat', 'assets/sprites/heart_beat_32x32.png', 32, 32);
 	game.load.spritesheet('panda', 'assets/sprites/Panda.png', 32, 32);
-	game.load.image('pandicle', 'assets/sprites/pandaParticle.png');
+	//game.load.image('pandicle', 'assets/sprites/pandaParticle.png');
 }
 	
 
