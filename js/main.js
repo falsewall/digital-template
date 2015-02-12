@@ -110,13 +110,13 @@ function create() {
 	hud = game.add.text(0, 0, 'Hearts: '+grabbed);
     hud.fixedToCamera= true;
 	
-	emitter = game.add.emitter(0, 0, 1000);
-	emitter.makeParticles('pandicle');
+	//emitter = game.add.emitter(0, 0, 1000);
+	//emitter.makeParticles('pandicle');
 	//p.addChild(emitter);
 	
-	 emitter.lifespan = 500;
-	emitter.maxParticleSpeed = new Phaser.Point(-100,50);
-	emitter.minParticleSpeed = new Phaser.Point(-200,-50);
+	// emitter.lifespan = 500;
+	//emitter.maxParticleSpeed = new Phaser.Point(-100,50);
+	//emitter.minParticleSpeed = new Phaser.Point(-200,-50);
 
 
 
@@ -248,7 +248,7 @@ function update() {
     {
 		p.animations.play('right', 10, true);
         p.body.velocity.x = 500;
-		emitter.emitParticle();
+		//emitter.emitParticle();
     }
 	
 
