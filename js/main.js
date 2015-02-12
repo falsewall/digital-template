@@ -248,8 +248,9 @@ function update() {
     {
 		p.animations.play('right', 10, true);
         p.body.velocity.x = 500;
+		emitter.emitParticle();
     }
-	emitter.emitParticle();
+	
 
 }
 
