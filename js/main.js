@@ -28,6 +28,7 @@ var jump;
 var jump2;
 var jump3;
 var coinNoise;
+var music;
 var heart;
 var bmd;
 var group;
@@ -40,9 +41,10 @@ function preload() {
 	game.load.audio('dog2', 'assets/sounds/effects/jump_02.ogg');
 	game.load.audio('dog3', 'assets/sounds/effects/jump_03.ogg');
 	game.load.audio('coin', 'assets/sounds/effects/coin.ogg');
+	game.load.audio('type1', 'assets/sounds/effects/type1.ogg');
 	game.load.spritesheet('heart_beat', 'assets/sprites/heart_beat_32x32.png', 32, 32);
 	game.load.spritesheet('panda', 'assets/sprites/Panda.png', 32, 32);
-
+	
 
 
 }
@@ -53,6 +55,9 @@ function create() {
 	jump2 = game.add.audio('dog2');
 	jump3 = game.add.audio('dog3');
 	coinNoise = game.add.audio('coin');
+	music = game.add.audio('type1);
+	music.autoplay = true;
+	
 
 
 
