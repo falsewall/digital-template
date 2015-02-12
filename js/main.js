@@ -105,9 +105,9 @@ function heartsetup(){
         var c = group.create(game.world.randomX, game.world.randomY, 'heart_beat');
 		c.name = 'heart' + i;
 		c.body.immovable = true;
-		c.animations.add('beat');
-		c.play('beat', 5, true));
     }
+	group.forEach(function (c){		c.animations.add('beat');
+		c.play('beat', 5, true));});
 
     //  This is the BitmapData we're going to be drawing to
    /* bmd = game.add.bitmapData(600, 3400);
