@@ -27,6 +27,7 @@ var touched=0;
 var jump;
 var jump2;
 var jump3;
+var heart;
 
 
 function preload() {
@@ -37,6 +38,7 @@ function preload() {
 	game.load.audio('dog2', 'assets/sounds/effects/jump_02.ogg');
 	game.load.audio('dog3', 'assets/sounds/effects/jump_03.ogg');
 	game.load.spritesheet('heart_beat', 'assets/sprites/heart_beat_32x32.png', 32, 32);
+	game.load.spritesheet('panda', 'assets/sprites/Panda.png', 30, 31);
 
 
 
@@ -61,8 +63,13 @@ function create() {
 	layer = map.createLayer('Tile Layer 1');
 	layer.resizeWorld();
 	//layer.debug = true;
-	p= game.add.sprite(90, 2500, 'heart_beat');
-	p.animations.add('beat');p.animations.play('beat', 10, true);
+	heart = game.add.sprite(90, 2500, 'heart_beat');
+	p= game.add.sprite(90, 2500, 'panda');
+	p.animation.add('stand', [0, 1], 10, true);
+	p.animation.add('jump', [5, 6, 7], 10, true);
+	p.animations.add('left', [25, 26, 27, 31, 32], 10, true);
+    p.animations.add('right', [15, 16, 17, 20, 21], 10, true);
+	p.animations.add('beat');p.animations.play('right', 10, true);
 	
 	game.physics.enable(p);
 
