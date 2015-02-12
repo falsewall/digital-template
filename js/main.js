@@ -95,12 +95,16 @@ function heartsetup(){
 	heart.animations.add('beat');
 	heart.play('beat', 5, true);
 	
-	    group = game.make.group();
+	    group = game.add.group();
+		group.enableBody = true;
+		group.physicsBodyType = Phaser.Physics.ARCADE;
 
     //  Add a bunch of sprites in random positions to the group
     for (var i = 0; i < 40; i++)
     {
-        group.create(game.world.randomX, game.world.randomY, 'heart_beat');
+        var c = group.create(game.world.randomX, game.world.randomY, 'heart_beat');
+		c.name = 'heart' + i;
+		c.body.immovable = true;
     }
 
     //  This is the BitmapData we're going to be drawing to
@@ -112,6 +116,12 @@ function heartsetup(){
     bmd.drawGroup(group);
 	
 
+}
+function collisionHandler (player, pickup) {
+    //  If the player collides with the chillis then they get eaten :)
+    //  The chilli frame ID is 17
+
+        pickup.kill();
 }
 
 function doublecheck(){//run every time player hits a wall. sets touched and leaves it till another wall is hit or ground is landed
