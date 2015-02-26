@@ -36,16 +36,17 @@ function spawnGui()
 {
 		music = game.add.audio('music', 1 , true);
 		music.play('', 0, 1, true);
-		button_a= game.add.sprite(40, 450, 'Buttons');
-		button_a.frame=2;
+		button_a= game.add.sprite(40, 500, 'Buttons');
+		button_a.frame=1;
 
 		button_a.inputEnabled = true;
-		button_b= game.add.sprite(150, 450, 'Buttons');
-		button_b.frame=4;
+		button_b= game.add.sprite(200, 500, 'Buttons');
+		button_b.frame=6;
 		button_b.inputEnabled = true;
 		text =game.add.text(300, 300, '100hp');
 		
 		button_a.events.onInputDown.add(listener, this);
+		button_b.event.onInputDown.add(listener2, this);
 }
 function spawnPlayers(){
 	player = new humanoid("player", "You", 100, 5, 3);
