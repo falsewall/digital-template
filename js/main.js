@@ -25,7 +25,7 @@ var attackContext;
 var music;
 
 function preload() {
-game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons.png", 128, 64, 6);
+game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons.png", 128, 64);
 game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 
 	
@@ -37,13 +37,14 @@ function spawnGui()
 		music = game.add.audio('music', 1 , true);
 		music.play('', 0, 1, true);
 		button_a= game.add.sprite(40, 500, 'Buttons');
-		button_a.frame=1;
+		button_a.frame=2;
 
 		button_a.inputEnabled = true;
 		button_b= game.add.sprite(200, 500, 'Buttons');
-		button_b.frame=6;
+		button_b.frame=5;
 		button_b.inputEnabled = true;
-		text =game.add.text(300, 300, '100hp');
+		text =game.add.text(0, 200, '100hp');
+		hud = game.add.text(0,20,'IntervieweR HP: '+100);
 		
 		button_a.events.onInputDown.add(listener, this);
 		button_b.event.onInputDown.add(listener2, this);
@@ -115,7 +116,7 @@ function create() {
 
 
 	
-	hud = game.add.text(0,20,'Interviewer HP: '+100);
+	
 	spawnGui();
 	spawnPlayers();
 	
