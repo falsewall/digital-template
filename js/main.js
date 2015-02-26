@@ -29,10 +29,10 @@ game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons", 128, 64);
 }
 function spawnGui()
 {
-		button_a= game.add.sprite(650, 700, 'Buttons');
+		button_a= game.add.sprite(200, 400, 'Buttons');
 		button_a.frame=0;
 		button_a.inputEnabled = true;
-		text =game.add.text(50, 700, '100hp');
+		text =game.add.text(50, 50, '100hp');
 		
 		button_a.events.onInputDown.add(listener, this);
 
