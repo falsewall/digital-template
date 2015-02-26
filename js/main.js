@@ -41,7 +41,7 @@ function spawnGui()
 
 		button_a.inputEnabled = true;
 		button_b= game.add.sprite(150, 450, 'Buttons');
-		button_b.frame=5;
+		button_b.frame=4;
 		button_b.inputEnabled = true;
 		text =game.add.text(700, 30, '100hp');
 		
@@ -53,7 +53,8 @@ function spawnPlayers(){
 }
 function updateHud()
 {
-	
+		hud.text= 'Interviewer HP: '+enemy.health;
+		text.text='Player hp: '+player.hp;
 }
 function opAttack(op)
 {
@@ -87,9 +88,12 @@ function opAttack(op)
 }
 function listener(){
 	player.attack(enemy);
+	buttona.fram=3;
+	updateHud();
 }
 function listener2(){
 	player.heal();
+	updateHud();
 }
 function create() {
 
@@ -119,7 +123,7 @@ function create() {
 
 }
 function update(){
-	hud.text= 'Interviewer HP: '+enemy.health;
+
 }
 function humanoid(type, name, health, attack, heals)
 {
