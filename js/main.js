@@ -17,37 +17,10 @@ window.onload = function() {
 var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
 
 
-var grabbed = 40;
-var map;
-var tileset;
-var layer;
-var p;
-var cursors;
-var touched=0;
-var jump;
-var jump2;
-var jump3;
-var coinNoise;
-var music;
-var heart;
-var bmd;
-var group;
-var hud;
-var emitter;
-var winnerText;
+
 
 function preload() {
-	game.load.tilemap('map', 'assets/tilesheets/industrial.json', null, Phaser.Tilemap.TILED_JSON);
-    game.load.image('tileset', 'assets/tilesheets/Industrial-TileSheet.png');
-	game.load.image('player', 'assets/sprites/phaser-dude.png');
-	game.load.audio('dog1', 'assets/sounds/effects/jump_01.ogg');
-	game.load.audio('dog2', 'assets/sounds/effects/jump_02.ogg');
-	game.load.audio('dog3', 'assets/sounds/effects/jump_03.ogg');
-	game.load.audio('coin', 'assets/sounds/effects/coin.ogg');
-	game.load.audio('type1', 'assets/sounds/effects/type1.ogg');
-	game.load.spritesheet('heart_beat', 'assets/sprites/heart_beat_32x32.png', 32, 32);
-	game.load.spritesheet('panda', 'assets/sprites/Panda.png', 32, 32);
-	game.load.image('pandicle', 'assets/sprites/pandaParticle.png');
+
 
 	
 
