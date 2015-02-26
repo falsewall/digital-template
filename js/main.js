@@ -98,23 +98,12 @@ function listener2(){
 function create() {
 
 	game.stage.backgroundColor = '#FFCCFF';
-	spawnGui();
+	//spawnGui();
 	//	player = new humanoid("player", "You", 100, 5, 3);
 	//enemy = new humanoid("evil", "interviewer", 200, 8, 1 );
-	spawnPlayers();
+	//spawnPlayers();
 	text =game.add.text(0, 200, "player hp: ");
 	hud = game.add.text(0,20,'IntervieweR HP: '+100);
-
-	
-
-
-
-
-
-
-
-	
-	
 
 	
 
