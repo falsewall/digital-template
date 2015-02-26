@@ -33,7 +33,7 @@ function create() {
 
 	
 
-	game.stage.backgroundColor = '#154632';
+	game.stage.backgroundColor = '#FFCCFF';
 	
 
 	
@@ -56,7 +56,7 @@ function create() {
 function update(){
 	
 }
-/*function humanoid(type, name, health, attack, heals)
+function humanoid(type, name, health, attack, heals)
 {
 	this.type=type;
 	this.name=name;
@@ -67,7 +67,7 @@ function update(){
 	humanoid.prototype.attack = function(humanoid) {
     return this.color + ' ' + this.type + ' apple';
 };
-}*/
+}
 
 
 
