@@ -33,7 +33,7 @@ function create() {
 
 	
 
-	game.stage.backgroundColor = '#154632';
+	//game.stage.backgroundColor = '#154632';
 	
 	game.add.sprite(0,0, 'einstein');
 	
@@ -45,7 +45,7 @@ function create() {
 
 
 	
-	hud = game.add.text(0, 0, 'Hearts remaining: ');
+	//hud = game.add.text(0, 0, 'Hearts remaining: ');
 
 	
 
