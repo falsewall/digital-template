@@ -73,7 +73,7 @@ function opAttack(op)
 }
 function listener(){
 	text.text='dmu';
-	player.attack();
+	//player.attack();
 	text.text='ferp';
 	updateHud();
 	text.text='berp';
