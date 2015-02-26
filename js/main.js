@@ -119,8 +119,8 @@ function humanoid(type, name, health, attack, heals)
 	this.attack=attack;
 	this.heals= heals;
 	
-	humanoid.prototype.attack = function(humanoid) {
-    humanoid.health-=this.attack;
+	humanoid.prototype.attack = function(bag) {
+    bag.health-=this.attack;
 };
 	humanoid.prototype.heal = function() {
 	if(heals>0)
