@@ -21,7 +21,7 @@ var counter=100;
 var button_a;
 
 function preload() {
-game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons", 128, 64);
+game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons.png", 128, 64, 6);
 
 	
 
