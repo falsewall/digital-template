@@ -21,7 +21,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 function preload() {
 
-
+	game.load.image('einstein', 'assets/phaser.png');
 	
 
 
@@ -35,7 +35,7 @@ function create() {
 
 	game.stage.backgroundColor = '#154632';
 	
-
+	game.add.sprite(0,0, einstein);
 	
 
 
