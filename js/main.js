@@ -43,8 +43,8 @@ function spawnGui()
 		button_b= game.add.sprite(200, 500, 'Buttons');
 		button_b.frame=5;
 		button_b.inputEnabled = true;
-		text =game.add.text(0, 200, '100hp');
-		hud = game.add.text(0,20,'IntervieweR HP: '+100);
+		this.text =game.add.text(0, 200, '100hp');
+		this.hud = game.add.text(0,20,'IntervieweR HP: '+100);
 		
 		button_a.events.onInputDown.add(listener, this);
 		button_b.event.onInputDown.add(listener2, this);
