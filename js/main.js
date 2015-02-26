@@ -19,6 +19,7 @@ var hud;
 var text;
 var counter=100;
 var button_a;
+var button_b;
 var enemy;
 var player;
 var attackContext;
@@ -98,7 +99,7 @@ function create() {
 		music.play('', 0, 1, true);
 		button_a= game.add.sprite(40, 500, 'Buttons');
 		button_a.frame=2;
-text.text='butts3';
+	text.text='butts3';
 		button_a.inputEnabled = true;
 		button_b= game.add.sprite(200, 500, 'Buttons');
 		button_b.frame=5;
