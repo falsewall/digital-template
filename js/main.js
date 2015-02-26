@@ -39,7 +39,7 @@ function spawnGui()
 }*/
 function listener(){
 	counter--;
-	text.text= counter +"hp";
+	text.text= counter +'hp';
 }
 function create() {
 
