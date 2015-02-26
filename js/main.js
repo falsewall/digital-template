@@ -100,7 +100,6 @@ function create() {
 		button_b.frame=5;
 		button_b.inputEnabled = true;
 		button_a.events.onInputDown.add(listener, this);
-		text.text='butts';
 		//button_b.event.onInputDown.add(listener2, this);
 	
 
