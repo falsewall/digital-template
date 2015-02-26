@@ -33,13 +33,8 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 
 
 }
-function spawnGui()
-{
 
-}
-function spawnPlayers(){
 
-}
 function updateHud()
 {
 	enemy.health--;
@@ -91,7 +86,6 @@ function create() {
 	
 	player = new humanoid("player", "You", 100, 5, 3);
 	enemy = new humanoid("evil", "interviewer", 200, 8, 1 );
-	spawnPlayers();
 	text =game.add.text(0, 200, "player hp: ");
 	hud = game.add.text(0,20,'IntervieweR HP: '+100);
 //spawngui
@@ -101,8 +95,11 @@ function create() {
 		button_a.frame=2;
 	text.text='butts3';
 		button_a.inputEnabled = true;
+		text.text='butts4';
 		button_b= game.add.sprite(200, 500, 'Buttons');
+		text.text='butts5';
 		button_b.frame=5;
+		text.text='butts6';
 		button_b.inputEnabled = true;
 
 		text.text='butts1';
