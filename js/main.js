@@ -36,8 +36,8 @@ function spawnGui()
 		button_a.events.onInputDown.add(listener, this);
 
 		
-}
-function listener() (){
+}*/
+function listener(){
 	counter--;
 	text.text= counter +"hp";
 }
