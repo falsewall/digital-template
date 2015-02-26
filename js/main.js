@@ -74,8 +74,9 @@ function opAttack(op)
 function listener(){
 	text.text='derp';
 	player.attack(enemy);
-	
-	//updateHud();
+	text.text='ferp';
+	updateHud();
+	text.text='berp';
 }
 function listener2(){
 	player.heal();
