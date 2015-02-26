@@ -88,7 +88,7 @@ function create() {
 	
 	player = new humanoid("player", "You", 100, 5, 3);
 	enemy = new humanoid("evil", "interviewer", 200, 8, 1 );
-	text =game.add.text(0, 200, "player hp: ");
+	text =game.add.text(0, 200, "player hp: "+player.health);
 	hud = game.add.text(0,20,'IntervieweR HP: '+100);
 //spawngui
 			music = game.add.audio('music', 1 , true);
