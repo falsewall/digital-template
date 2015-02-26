@@ -20,8 +20,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 
 function preload() {
-var hud;
-var winnerText;
+
 
 	
 
@@ -47,13 +46,7 @@ function create() {
 
 	
 	hud = game.add.text(0, 0, 'Hearts remaining: ');
-	winnerText = game.add.text(0, 0, "", {
-        font: "69px Arial",
-        fill: "#ff0040",
-        align: "center"
-    });
-	winnerText.fixedToCamera = true;
-    hud.fixedToCamera= true;
+
 	
 
 
