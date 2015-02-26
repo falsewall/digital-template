@@ -22,8 +22,6 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 function preload() {
 
 game.load.image('einstein', 'assets/pics/ra_einstein.png');
-	
-
 
 }
 
@@ -34,49 +32,8 @@ game.add.sprite(0, 0, 'einstein');
 	
 
 	//game.stage.backgroundColor = '#154632';
-	
-
-	
-
-
-
-
-
-
-
-	
+		
 	//hud = game.add.text(0, 0, 'Hearts remaining: ');
-
-	
-
-
-
-
 }
-/*function humanoid(type, name, health, attack, heals)
-{
-	this.type=type;
-	this.name=name;
-	this.hp=health;
-	this.attack=attack;
-	this.heals= heals;
-	
-	humanoid.prototype.attack = function(humanoid) {
-    return this.color + ' ' + this.type + ' apple';
-};
-}*/
-
-
-
-
-
-
-function render() {
-
-    //game.debug.body(p);
-    //game.debug.bodyInfo(p, 32, 320);
-
-}
-
 
 };
