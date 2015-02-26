@@ -34,7 +34,7 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 }
 function spawnGui()
 {
-		music = game.add.audio('type1', 1 , true);
+		music = game.add.audio('music', 1 , true);
 		music.play('', 0, 1, true);
 		button_a= game.add.sprite(200, 400, 'Buttons');
 		button_a.frame=0;
