@@ -20,7 +20,7 @@ var text;
 var counter=100;
 
 function preload() {
-game.load.spriteshet("Buttons", "assets/sprites/128X64Buttons");
+game.load.spriteshet("Buttons", "assets/sprites/128X64Buttons". 128, 64, 6);
 
 	
 
@@ -28,7 +28,8 @@ game.load.spriteshet("Buttons", "assets/sprites/128X64Buttons");
 }
 function spawnGui()
 {
-		var button_a= game.add.sprite(650, 700, 'B)
+		var button_a= game.add.sprite(650, 700, 'Buttons');
+		button_a.frame=0;
 		button_a.inputEnabled = true;
 		text =game.add.text(50, 700, '100hp');
 		
