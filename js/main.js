@@ -19,9 +19,14 @@ var hud;
 var text;
 var counter=100;
 var button_a;
+var enemy;
+var player;
+var attackContext;
+var music;
 
 function preload() {
 game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons.png", 128, 64, 6);
+game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 
 	
 
@@ -29,18 +34,50 @@ game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons.png", 128, 64, 6)
 }
 function spawnGui()
 {
+		music = game.add.audio('type1', 1 , true);
+		music.play('', 0, 1, true);
 		button_a= game.add.sprite(200, 400, 'Buttons');
 		button_a.frame=0;
 		button_a.inputEnabled = true;
-		text =game.add.text(50, 50, '100hp');
+		text =game.add.text(700, 30, '100hp');
 		
 		button_a.events.onInputDown.add(listener, this);
 
 		
 }
+function opAttack(op)
+{
+	att= Math.floor((Math.random() * 100)+ 1);
+	switch(att){
+		case 1:
+			attackContext= 'Employer asks about your prior job experience.'
+			
+			break;
+		case 2:
+			attackContext= 'Employer uses awkward silence.'
+			break;
+		case 3:
+			attackContext= 'Employer asks what you expect to paid.'
+			break;
+		case 4:
+			attackContext= 'Employer tells you there are no casual fridays.'
+			break;
+		case 5:
+			attackContext= 'Employer gives you a hypothetical question with no right answer.'
+			break;
+		case 6:
+			attackContext='Employer cuts you off mid sentence.'
+			break;
+		default:
+			attackContext= 'Employer uses awkward silence.'
+			break;
+		
+	}
+	
+}
 function listener(){
 	counter--;
-	text.text= counter +'hp';
+	text.text= 'Your HP: '+counter ;
 }
 function create() {
 
@@ -60,7 +97,7 @@ function create() {
 
 
 	
-	hud = game.add.text(0, 0, 'Hearts remaining: ');
+	hud = game.add.text('Interviewer HP: '+100);
 	spawnGui();
 	
 
