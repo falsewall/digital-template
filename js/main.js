@@ -72,7 +72,7 @@ function opAttack(op)
 	
 }
 function listener(){
-	text.text='derp';
+	text.text='dmu';
 	player.attack(enemy);
 	text.text='ferp';
 	updateHud();
