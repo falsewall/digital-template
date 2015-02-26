@@ -20,7 +20,7 @@ var text;
 var counter=100;
 
 function preload() {
-game.load.spriteshet("Buttons", "assets/sprites/128X64Buttons". 128, 64, 6);
+game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons", 128, 64);
 
 	
 
@@ -36,7 +36,7 @@ function spawnGui()
 		button_a.events.onInputDown.add(listener, this);
 
 		
-}*/
+}
 function listener(){
 	counter--;
 	text.text= counter +'hp';
