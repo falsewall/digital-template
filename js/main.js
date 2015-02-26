@@ -18,6 +18,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 var hud;
 var text;
 var counter=100;
+var button_a;
 
 function preload() {
 game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons", 128, 64);
@@ -28,7 +29,7 @@ game.load.spritesheet("Buttons", "assets/sprites/128X64Buttons", 128, 64);
 }
 function spawnGui()
 {
-		var button_a= game.add.sprite(650, 700, 'Buttons');
+		button_a= game.add.sprite(650, 700, 'Buttons');
 		button_a.frame=0;
 		button_a.inputEnabled = true;
 		text =game.add.text(50, 700, '100hp');
