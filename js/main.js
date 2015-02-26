@@ -88,7 +88,7 @@ function opAttack(op)
 }
 function listener(){
 	player.attack(enemy);
-	buttona.fram=3;
+	button_a.frame=3;
 	updateHud();
 }
 function listener2(){
