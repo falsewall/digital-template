@@ -60,7 +60,7 @@ function create() {
 
 	
 	hud = game.add.text(0, 0, 'Hearts remaining: ');
-
+	spawnGui();
 	
 
 
