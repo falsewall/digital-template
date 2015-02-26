@@ -51,6 +51,10 @@ function spawnPlayers(){
 	player = new humanoid("player", "You", 100, 5, 3);
 	enemy = new humanoid("evil", "interviewer", 200, 8, 1 );
 }
+function updateHud()
+{
+	
+}
 function opAttack(op)
 {
 	att= Math.floor((Math.random() * 100)+ 1);
@@ -105,7 +109,7 @@ function create() {
 
 
 	
-	hud = game.add.text('Interviewer HP: '+100);
+	hud = game.add.text(0,20,'Interviewer HP: '+100);
 	spawnGui();
 	spawnPlayers();
 	
@@ -115,7 +119,7 @@ function create() {
 
 }
 function update(){
-	
+	hud.text= 'Interviewer HP: '+enemy.health;
 }
 function humanoid(type, name, health, attack, heals)
 {
