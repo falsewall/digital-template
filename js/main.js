@@ -73,7 +73,7 @@ function opAttack(op)
 }
 function listener(){
 	text.text='dmu';
-	player.attack(enemy);
+	player.attack();
 	text.text='ferp';
 	updateHud();
 	text.text='berp';
@@ -119,8 +119,8 @@ function humanoid(type, name, health, attack, heals)
 	this.attack=attack;
 	this.heals= heals;
 	
-	humanoid.prototype.attack = function(bag) {
-    bag.health-=this.attack;
+	humanoid.prototype.attack = function() {
+    this.health-=2;
 };
 	humanoid.prototype.heal = function() {
 	if(heals>0)
