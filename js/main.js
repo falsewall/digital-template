@@ -46,7 +46,7 @@ function spawnGui()
 
 		
 		button_a.events.onInputDown.add(listener, this);
-		button_b.event.onInputDown.add(listener2, this);
+		//button_b.event.onInputDown.add(listener2, this);
 }
 function spawnPlayers(){
 
@@ -99,9 +99,9 @@ function create() {
 
 	game.stage.backgroundColor = '#FFCCFF';
 	
-	//player = new humanoid("player", "You", 100, 5, 3);
-	//enemy = new humanoid("evil", "interviewer", 200, 8, 1 );
-	//spawnPlayers();
+	player = new humanoid("player", "You", 100, 5, 3);
+	enemy = new humanoid("evil", "interviewer", 200, 8, 1 );
+	spawnPlayers();
 	text =game.add.text(0, 200, "player hp: ");
 	hud = game.add.text(0,20,'IntervieweR HP: '+100);
 	spawnGui();
