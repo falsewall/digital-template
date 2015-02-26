@@ -38,19 +38,18 @@ function spawnGui()
 		music.play('', 0, 1, true);
 		button_a= game.add.sprite(40, 450, 'Buttons');
 		button_a.frame=2;
-		button_a.is='attack';
+
 		button_a.inputEnabled = true;
 		button_b= game.add.sprite(150, 450, 'Buttons');
 		button_b.frame=5;
 		button_b.inputEnabled = true;
-		buttonb.is='item';
 		text =game.add.text(700, 30, '100hp');
 		
 		button_a.events.onInputDown.add(listener, this);
 }
 function spawnPlayers(){
 	player = new humanoid("player", "You", 100, 5, 3);
-	enemy = new humanoid("evil", "interviewer", 200, 8, 1 )'
+	enemy = new humanoid("evil", "interviewer", 200, 8, 1 );
 }
 function opAttack(op)
 {
@@ -130,7 +129,8 @@ function humanoid(type, name, health, attack, heals)
     humanoid.health-=this.attack;
 };
 	humanoid.prototype.heal = function() {
-	if(heals>0){
+	if(heals>0)
+	{
     this.health = 100;
 	this.heals-=1;
 	}
