@@ -20,7 +20,8 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 
 function preload() {
-
+var hud;
+var winnerText;
 
 	
 
@@ -30,7 +31,7 @@ function preload() {
 function create() {
 
 
-	music.play('', 0, 1, true);
+
 	
 
 	game.stage.backgroundColor = '#154632';
@@ -40,12 +41,6 @@ function create() {
 
 
 
-
-    p.body.bounce.y = 0.1;
-    p.body.linearDamping = 1;
-    p.body.collideWorldBounds = true;
-
-    game.camera.follow(p);
 
 
 
