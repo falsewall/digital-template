@@ -21,7 +21,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 function preload() {
 
-game.load.image('einstein', 'assets/pics/ra_einstein.png');
+
 	
 
 
@@ -30,14 +30,14 @@ game.load.image('einstein', 'assets/pics/ra_einstein.png');
 function create() {
 
 
-game.add.sprite(0, 0, 'einstein');
-	
-
-	//game.stage.backgroundColor = '#154632';
-	
 
 	
 
+	game.stage.backgroundColor = '#154632';
+	
+
+	
+
 
 
 
@@ -45,7 +45,7 @@ game.add.sprite(0, 0, 'einstein');
 
 
 	
-	//hud = game.add.text(0, 0, 'Hearts remaining: ');
+	hud = game.add.text(0, 0, 'Hearts remaining: ');
 
 	
 
