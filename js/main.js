@@ -90,7 +90,6 @@ function opAttack(op)
 }
 function listener(){
 	player.attack(enemy);
-	button_a.frame=3;
 	updateHud();
 }
 function listener2(){
@@ -100,7 +99,9 @@ function listener2(){
 function create() {
 
 	game.stage.backgroundColor = '#FFCCFF';
-	text =game.add.text(0, 200, '100hp');
+	spawnGui();
+	spawnPlayers();
+	text =game.add.text(0, 200, "player hp: "+player.health);
 	hud = game.add.text(0,20,'IntervieweR HP: '+100);
 
 	
@@ -113,8 +114,7 @@ function create() {
 
 	
 	
-	spawnGui();
-	spawnPlayers();
+
 	
 
 
