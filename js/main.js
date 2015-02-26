@@ -43,7 +43,7 @@ function spawnGui()
 		button_b= game.add.sprite(150, 450, 'Buttons');
 		button_b.frame=4;
 		button_b.inputEnabled = true;
-		text =game.add.text(700, 30, '100hp');
+		text =game.add.text(500, 400, '100hp');
 		
 		button_a.events.onInputDown.add(listener, this);
 }
