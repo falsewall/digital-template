@@ -38,13 +38,13 @@ function spawnGui()
 		music.play('', 0, 1, true);
 		button_a= game.add.sprite(40, 500, 'Buttons');
 		button_a.frame=2;
-
+text.text='butts3';
 		button_a.inputEnabled = true;
 		button_b= game.add.sprite(200, 500, 'Buttons');
 		button_b.frame=5;
 		button_b.inputEnabled = true;
 
-		
+		text.text='butts1';
 		button_a.events.onInputDown.add(listener, this);
 		text.text='butts';
 		//button_b.event.onInputDown.add(listener2, this);
