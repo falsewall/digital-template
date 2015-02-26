@@ -64,7 +64,7 @@ function humanoid(type, name, health, attack, heals)
 	humanoid.prototype.attack = function(humanoid) {
     return this.color + ' ' + this.type + ' apple';
 };
-};
+}
 
 
 
