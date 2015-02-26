@@ -53,7 +53,7 @@ game.add.sprite(0, 0, 'einstein');
 
 
 }
-function update{
+function update(){
 	
 }
 /*function humanoid(type, name, health, attack, heals)
