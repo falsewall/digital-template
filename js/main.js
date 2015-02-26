@@ -34,20 +34,7 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 }
 function spawnGui()
 {
-		music = game.add.audio('music', 1 , true);
-		music.play('', 0, 1, true);
-		button_a= game.add.sprite(40, 500, 'Buttons');
-		button_a.frame=2;
-text.text='butts3';
-		button_a.inputEnabled = true;
-		button_b= game.add.sprite(200, 500, 'Buttons');
-		button_b.frame=5;
-		button_b.inputEnabled = true;
 
-		text.text='butts1';
-		button_a.events.onInputDown.add(listener, this);
-		text.text='butts';
-		//button_b.event.onInputDown.add(listener2, this);
 }
 function spawnPlayers(){
 
@@ -106,8 +93,21 @@ function create() {
 	spawnPlayers();
 	text =game.add.text(0, 200, "player hp: ");
 	hud = game.add.text(0,20,'IntervieweR HP: '+100);
-	spawnGui();
+//spawngui
+			music = game.add.audio('music', 1 , true);
+		music.play('', 0, 1, true);
+		button_a= game.add.sprite(40, 500, 'Buttons');
+		button_a.frame=2;
+text.text='butts3';
+		button_a.inputEnabled = true;
+		button_b= game.add.sprite(200, 500, 'Buttons');
+		button_b.frame=5;
+		button_b.inputEnabled = true;
 
+		text.text='butts1';
+		button_a.events.onInputDown.add(listener, this);
+		text.text='butts';
+		//button_b.event.onInputDown.add(listener2, this);
 	
 
 
