@@ -46,6 +46,7 @@ function spawnGui()
 
 		
 		button_a.events.onInputDown.add(listener, this);
+		text.text='butts';
 		//button_b.event.onInputDown.add(listener2, this);
 }
 function spawnPlayers(){
