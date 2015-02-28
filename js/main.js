@@ -38,7 +38,7 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 function updateHud()
 {
 	enemy.health--;
-		hud.text= 'Interviewer HP: '+enemy.health;
+		hud.text= 'Interviewer HP: '+enemy.hp;
 		text.text='Player hp: '+player.hp;
 }
 function opAttack(op)
@@ -100,6 +100,7 @@ function create() {
 		button_b.frame=5;
 		button_b.inputEnabled = true;
 		button_a.events.onInputDown.add(listener, this);
+
 		//button_b.event.onInputDown.add(listener2, this);
 	
 
@@ -114,7 +115,7 @@ function humanoid(type, name, health, attack, heals)
 {
 	this.type=type;
 	this.name=name;
-	this.hp=health;
+	this.hp=100;
 	this.attack=attack;
 	this.heals= heals;
 	
@@ -124,7 +125,7 @@ function humanoid(type, name, health, attack, heals)
 	humanoid.prototype.heal = function() {
 	if(heals>0)
 	{
-    this.health = 100;
+    this.hp = 100;
 	this.heals-=1;
 	}
 };
