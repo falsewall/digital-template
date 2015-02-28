@@ -115,7 +115,7 @@ function humanoid(type, name, health, attack, heals)
 {
 	this.type=type;
 	this.name=name;
-	this.hp=100;
+	this.hp=health;
 	this.attack=attack;
 	this.heals= heals;
 	
