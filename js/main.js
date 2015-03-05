@@ -39,8 +39,8 @@ function updateHud()
 {
 	enemy.hp--;
 	opAttack(player);
-		hud.text= 'Interviewer HP: '+enemy.hp;
-		text.text='Player hp: '+player.hp;
+		hud.text= 'Cloud HP: '+enemy.hp;
+		text.text='Player HP: '+player.hp;
 }
 function opAttack(op)
 {
@@ -82,9 +82,9 @@ function create() {
 	game.stage.backgroundColor = '#FFCCFF';
 	
 	player = new humanoid("player", "You", 100, 5, 3);
-	enemy = new humanoid("evil", "interviewer", 200, 8, 1 );
-	text =game.add.text(0, 200, "player hp: "+player.hp);
-	hud = game.add.text(0,20,'IntervieweR HP: '+100);
+	enemy = new humanoid("evil", "cloud", 200, 8, 1 );
+	text =game.add.text(0, 200, "Player HP: "+player.hp);
+	hud = game.add.text(0,20,'IntervieweR HP: '+enemy.hp);
 //spawngui
 			music = game.add.audio('music', 1 , true);
 		music.play('', 0, 1, true);
