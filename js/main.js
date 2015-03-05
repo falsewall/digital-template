@@ -83,7 +83,7 @@ function listener2(){
 };
 function create() {
 
-	game.stage.backgroundColor = '#FFCCFF';
+	game.stage.backgroundColor = '#EFCCFF';
 	
 	player = new humanoid("player", "You", 100, 5, 3);
 	enemy = new humanoid("evil", "cloud", 200, 8, 1 );
