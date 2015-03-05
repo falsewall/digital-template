@@ -37,7 +37,7 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 
 function updateHud()
 {
-	enemy.health--;
+	enemy.hp--;
 		hud.text= 'Interviewer HP: '+enemy.hp;
 		text.text='Player hp: '+player.hp;
 }
