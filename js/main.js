@@ -95,7 +95,7 @@ function create() {
 		button_b.frame=5;
 		button_b.inputEnabled = true;
 		button_a.events.onInputDown.add(listener, this);
-		//button_b.events.onInputDown.add(listener2, this);
+		button_b.events.onInputDown.add(listener2, this);
 
 		//button_b.event.onInputDown.add(listener2, this);
 	
