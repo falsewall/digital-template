@@ -38,7 +38,7 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 function updateHud()
 {
 	enemy.hp--;
-	opAttack(player);
+	//opAttack(player);
 		hud.text= 'cloud HP: '+enemy.hp;
 		text.text='Player HP: '+player.hp;
 };
@@ -95,7 +95,7 @@ function create() {
 		button_b.inputEnabled = true;
 		button_a.events.onInputDown.add(listener, this);
 		button_b.events.onInputDown.add(listener2, this);
-
+		opAttack(player);
 		//button_b.event.onInputDown.add(listener2, this);
 	
 
