@@ -38,8 +38,8 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 function updateHud()
 {
 	enemy.hp--;
-	opAttack(player);
-		hud.text= 'Cloud HP: '+enemy.hp;
+	//opAttack(player);
+		hud.text= 'cloud HP: '+enemy.hp;
 		text.text='Player HP: '+player.hp;
 }
 function opAttack(op)
