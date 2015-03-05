@@ -62,7 +62,7 @@ function opAttack(op)
 
 		default:
 			attackContext= 'The cloud says some pun about "The calm before the storm". It hurts to listen to.'
-			break;
+
 		
 	}
 	
