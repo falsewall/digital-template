@@ -45,7 +45,7 @@ function updateHud()
 function opAttack(op)
 {
 	att= Math.floor((Math.random() * 100)+ 1);
-	player.hp-=att;
+	op.hp=player.hp-att;
 	switch(att){
 		case 1:
 			attackContext= 'The cloud fires a precision hail strike on your head'
@@ -84,7 +84,7 @@ function create() {
 	player = new humanoid("player", "You", 100, 5, 3);
 	enemy = new humanoid("evil", "cloud", 200, 8, 1 );
 	text =game.add.text(0, 200, "Player HP: "+player.hp);
-	hud = game.add.text(0,20,'IntervieweR HP: '+enemy.hp);
+	hud = game.add.text(0,20,'Cloud HP: '+enemy.hp);
 //spawngui
 			music = game.add.audio('music', 1 , true);
 		music.play('', 0, 1, true);
@@ -95,7 +95,7 @@ function create() {
 		button_b.frame=5;
 		button_b.inputEnabled = true;
 		button_a.events.onInputDown.add(listener, this);
-		button_b.events.onInputDown.add(listener2, this);
+		//button_b.events.onInputDown.add(listener2, this);
 
 		//button_b.event.onInputDown.add(listener2, this);
 	
