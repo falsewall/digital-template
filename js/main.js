@@ -17,6 +17,7 @@ window.onload = function() {
 var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
 var hud;
 var text;
+var attackText;
 var counter=100;
 var button_a;
 var button_b;
@@ -49,13 +50,13 @@ function updateHud()
 function opAttack(op)
 {
 	var att= Math.floor((Math.random() * 10)+ 1);
-	player.hp=player.hp-att;
+	op.hp=player.hp-att;
 	switch(att){
 		case 1:
 			attackContext= 'The cloud fires a precision hail strike on your head'
 			break;
 		case 2:
-			attackContext= 'The cloud undulates menacingly with spikes of cloud. A carp walks on land and attacks you from behind. '
+			attackContext= 'The cloud undulates menacingly with spikes of cloud. A carp walks out of the lake and punches you bruising the skin under through your polo shirt. '
 			break;
 		case 3:
 			attackContext= 'The cloud drops a raindrop in your eye.'
