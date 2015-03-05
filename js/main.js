@@ -38,6 +38,7 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 function updateHud()
 {
 	enemy.hp--;
+	opAttack(player);
 		hud.text= 'Interviewer HP: '+enemy.hp;
 		text.text='Player hp: '+player.hp;
 }
@@ -68,11 +69,9 @@ function opAttack(op)
 	
 }
 function listener(){
-	text.text='dmu';
 	//player.attack();
-	text.text='ferp';
 	updateHud();
-	text.text='berp';
+
 }
 function listener2(){
 	player.heal();
