@@ -38,7 +38,7 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 
 function updateHud()
 {
-	enemy.hp--;
+	opAttack(enemy);
 	opAttack(player);
 		hud.text= 'cloud HP: '+enemy.hp;
 		text.text='Player HP: '+player.hp;
@@ -50,7 +50,9 @@ function updateHud()
 function opAttack(op)
 {
 	var att= Math.floor((Math.random() * 10)+ 1);
-	op.hp=player.hp-att;
+	op.hp=op.hp-att;
+	if(op.type==='evil')
+	{
 	switch(att){
 		case 1:
 			attackContext= 'The cloud fires a precision hail strike on your head'
@@ -66,11 +68,9 @@ function opAttack(op)
 			break;
 
 		default:
-			attackContext= 'The cloud says some pun about "The calm before the storm". It hurts to listen to.'
-
-		
+			attackContext= 'The cloud says some pun about "The calm before the storm". It hurts to listen to.'		
 	}
-	
+	}
 };
 function listener(){
 	//player.attack();
