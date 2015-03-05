@@ -49,7 +49,6 @@ function opAttack(op)
 	switch(att){
 		case 1:
 			attackContext= 'The cloud fires a precision hail strike on your head'
-			
 			break;
 		case 2:
 			attackContext= 'The cloud undulates menacingly with spikes of cloud. A carp walks on land and attacks you from behind. '
@@ -67,7 +66,7 @@ function opAttack(op)
 		
 	}
 	
-}
+};
 function listener(){
 	//player.attack();
 	updateHud();
