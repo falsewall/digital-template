@@ -41,10 +41,14 @@ function updateHud()
 	opAttack(player);
 		hud.text= 'cloud HP: '+enemy.hp;
 		text.text='Player HP: '+player.hp;
+		if(enemy.hp<0)
+		{hud.text = 'Cloud HP: 0';}
+		if(player.hp<0)
+		{text.text = 'Player HP: 0';}
 };
 function opAttack(op)
 {
-	var att= Math.floor((Math.random() * 100)+ 1);
+	var att= Math.floor((Math.random() * 10)+ 1);
 	player.hp=player.hp-att;
 	switch(att){
 		case 1:
