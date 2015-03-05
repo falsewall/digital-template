@@ -44,28 +44,24 @@ function updateHud()
 function opAttack(op)
 {
 	att= Math.floor((Math.random() * 100)+ 1);
+	player.hp-=att;
 	switch(att){
 		case 1:
-			attackContext= 'Employer asks about your prior job experience.'
+			attackContext= 'The cloud fires a precision hail strike on your head'
 			
 			break;
 		case 2:
-			attackContext= 'Employer uses awkward silence.'
+			attackContext= 'The cloud undulates menacingly with spikes of cloud. A carp walks on land and attacks you from behind. '
 			break;
 		case 3:
-			attackContext= 'Employer asks what you expect to paid.'
+			attackContext= 'The cloud drops a raindrop in your eye.'
 			break;
 		case 4:
-			attackContext= 'Employer tells you there are no casual fridays.'
+			attackContext= 'The cloud uses tackle'
 			break;
-		case 5:
-			attackContext= 'Employer gives you a hypothetical question with no right answer.'
-			break;
-		case 6:
-			attackContext='Employer cuts you off mid sentence.'
-			break;
+
 		default:
-			attackContext= 'Employer uses awkward silence.'
+			attackContext= 'The cloud says some pun about "The calm before the storm". It hurts to listen to.'
 			break;
 		
 	}
@@ -100,6 +96,7 @@ function create() {
 		button_b.frame=5;
 		button_b.inputEnabled = true;
 		button_a.events.onInputDown.add(listener, this);
+		button_b.events.onInputDown.add(listener2, this);
 
 		//button_b.event.onInputDown.add(listener2, this);
 	
