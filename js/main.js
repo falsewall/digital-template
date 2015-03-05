@@ -125,7 +125,7 @@ function humanoid(type, name, health, attack, heals)
 	this.heals-=1;
 	}
 };
-}
+};
 
 
 
