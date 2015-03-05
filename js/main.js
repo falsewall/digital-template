@@ -45,7 +45,7 @@ function updateHud()
 function opAttack(op)
 {
 	att= Math.floor((Math.random() * 100)+ 1);
-	op.hp=player.hp-att;
+	player.hp=player.hp-att;
 	switch(att){
 		case 1:
 			attackContext= 'The cloud fires a precision hail strike on your head'
