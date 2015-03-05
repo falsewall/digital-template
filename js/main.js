@@ -32,16 +32,16 @@ game.load.audio('music', 'assets/sounds/pokemusic.ogg');
 	
 
 
-}
+};
 
 
 function updateHud()
 {
 	enemy.hp--;
-	opAttack(player);
+	//opAttack(player);
 		hud.text= 'cloud HP: '+enemy.hp;
 		text.text='Player HP: '+player.hp;
-}
+};
 function opAttack(op)
 {
 	att= Math.floor((Math.random() * 100)+ 1);
@@ -72,11 +72,11 @@ function listener(){
 	//player.attack();
 	updateHud();
 
-}
+};
 function listener2(){
 	player.heal();
 	updateHud();
-}
+};
 function create() {
 
 	game.stage.backgroundColor = '#FFCCFF';
@@ -103,10 +103,10 @@ function create() {
 
 
 
-}
+};
 function update(){
 
-}
+};
 function humanoid(type, name, health, attack, heals)
 {
 	this.type=type;
