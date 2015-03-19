@@ -26,7 +26,7 @@ var phonesLeft=0;
 var phoneList=[];
 var ringing=false;
 var timer;
-var delay = 2000;
+var delay = 6000;
 var won=0;
 
 var s;
