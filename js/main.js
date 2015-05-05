@@ -11,7 +11,7 @@ game.load.image('portal_y', 'assets/portal_y.png');
 game.load.image('portal_b', 'assets/portal_b.png');
 
 game.load.image('green', 'assets/GREEN.png');
-game.load.image('purple', 'assets/purple.png');
+game.load.image('purple', 'assets/PURPLE.png');
 game.load.image('orange', 'assets/ORANGE.png');
 game.load.image('yellow', 'assets/YELLOW.png');
 game.load.image('blue', 'assets/BLUE.png');
