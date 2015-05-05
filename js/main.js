@@ -119,10 +119,6 @@ function goBack (r) {
 		else if(r.loc==='yellow'){
 			library();
 			portal_g.exists=true;
-			if (on===false){
-				yellowNoise.play('',0, 1, true);
-				on=true;
-			}
 		}
 		else if(r.loc==='green'){foyer();}
 		else if(r.loc==='orange'){
@@ -294,6 +290,7 @@ function library() {
 		bookSprite.exists= true;
 		moist=true;
 		text.text='Thank you so much,  here is a book I was reading to help\n forget I was hungry.';
+		yellowNoise.play('',0, 1, true);
 	}
 	else{text.text='I am so hungry.';}
 	
