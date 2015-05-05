@@ -341,10 +341,72 @@ function stopExist (){//Makes all backgrounds and portals stop existing
 
 function update() {
 
+<<<<<<< HEAD
 
 		//winnerText.text="You Made it the the pier!"
 		//winnerText.x= boater.sprite.x;
 
+=======
+    //game.physics.arcade.collide(p, layer);
+	game.physics.arcade.collide(p, group, collisionHandler, null, this);
+    game.physics.arcade.collide(group, layer);
+	doublecheck();//should deal with walljumping
+	if (p.body.blocked.down)
+	{
+	    if(p.body.velocity.x < 0)
+		{
+			p.body.velocity.x+=100;
+		}
+		if(p.body.velocity.x > 0)
+		{
+			p.body.velocity.x-=100;
+		}
+
+	
+	}
+	else 
+	{
+		if(p.body.velocity.x < 0)
+		{
+			p.body.velocity.x+=50;
+		}
+		if(p.body.velocity.x > 0)
+		{
+			p.body.velocity.x-=50;
+		}
+	}
+	if(p.body.velocity.x === 0)
+	{
+			p.animations.play('standing', 5, true);
+	}
+
+    if (cursors.up.isDown)
+    {
+        if (p.body.onFloor())
+        {
+			p.animations.play('jump', 10, true);
+			jump.play();
+            p.body.velocity.y = -500;
+        }
+    }
+
+    if (cursors.left.isDown)
+    {
+        p.body.velocity.x = -500;
+		p.animations.play('left', 15, true);
+    }
+    else if (cursors.right.isDown)
+    {
+		p.animations.play('right', 15, true);
+        p.body.velocity.x = 500;
+		
+    }
+	if(grabbed=== 0)
+	{
+		emitter.emitParticle();
+		winnerText.setText("The pandas live on!");
+	}
+>>>>>>> parent of d34f5db... tweaks
 }
 
 function end(){
